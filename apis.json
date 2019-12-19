@@ -1,0 +1,101 @@
+{
+    "name": "NewsWhip",
+    "description": "Understand what social media content resonates with audiences. Centralize your social media monitoring and analytics to discover what's driving engagement.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11443-newswhip.jpg",
+    "tags": [
+        "api provider",
+        "general data",
+        "have api",
+        "news",
+        "news api",
+        "relative data",
+        "target"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/newswhip\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "News Whip API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/11443-newswhip.jpg",
+            "humanURL": "http:\/\/newswhip.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/openapis\/news-whip-api.json"
+                },
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/news-whip-api-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Authentication",
+            "url": "http:\/\/www.newswhip.com\/api-widgets#authentication"
+        },
+        {
+            "type": "Base",
+            "url": "https:\/\/api.newswhip.com"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.newswhip.com\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blog.newswhip.com\/index.php\/feed"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/newswhip"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/organization\/newswhip"
+        },
+        {
+            "type": "Email",
+            "url": "contact@newswhip.com"
+        },
+        {
+            "type": "FAQ",
+            "url": "https:\/\/spike.newswhip.com\/faq"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/spike.newswhip.com\/pricing\/team"
+        },
+        {
+            "type": "Terms of Service",
+            "url": "http:\/\/www.newswhip.com\/PrivacyAndLegal"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/NewsWhip"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.newswhip.com\/"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/newswhip.com"
+        },
+        {
+            "type": "Widgets",
+            "url": "http:\/\/www.newswhip.com\/widgetabout#widget"
+        },
+        {
+            "type": "Wikipedia ",
+            "url": "http:\/\/en.wikipedia.org\/wiki\/NewsWhip"
+        }
+    ]
+}

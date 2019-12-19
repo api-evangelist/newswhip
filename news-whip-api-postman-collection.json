@@ -1,0 +1,290 @@
+{
+    "id": "a956236c5f8e0ca429420a23eb30002c",
+    "name": "News Whip API",
+    "description": null,
+    "auth": null,
+    "events": null,
+    "variables": [],
+    "order": [],
+    "folders_order": [],
+    "folders": [],
+    "requests": [
+        {
+            "id": "33f3e75485a2f1717ab3659d51ca7d88",
+            "name": "Local",
+            "url": "httpsapi.newswhip.comv1\/local\/",
+            "description": "Pull list of localities.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "API Key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "rawModeData": ""
+        },
+        {
+            "id": "46881db68f814b7476243288adc009e1",
+            "name": "Local",
+            "url": "httpsapi.newswhip.comv1\/local\/{city}\/All\/{time_period}",
+            "description": "Search local news.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "city",
+                    "description": "Filters articles published in that city. See available cities below. i.e. London, New%20York,%20NY, Toronto",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "key",
+                    "description": "API Key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort_by",
+                    "description": "One of the following: [default, fb_likes, fb_shares, fb_comments, fb_total, twitter, linkedin, fb_tw_and_li, nw_score, nw_max_score]. Defaults to default",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "time_period",
+                    "description": "Filters articles published within the last X hours. X can be 1, 3, 12, 24 or 168 hours)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "video_only",
+                    "description": "true or false. Defaults to false.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "rawModeData": ""
+        },
+        {
+            "id": "3b7d085ba16d51308fbd06a08f684889",
+            "name": "Publisher",
+            "url": "httpsapi.newswhip.comv1\/publisher\/",
+            "description": "Pull publishers.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "API Key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "rawModeData": ""
+        },
+        {
+            "id": "91dfbc71047487a4298349993ec69d14",
+            "name": "Publisher",
+            "url": "httpsapi.newswhip.comv1\/publisher\/{publisher}\/{time_period}",
+            "description": "Search news by publisiher.",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "API Key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "publisher",
+                    "description": "Returns all articles published within that domain or subdomain.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort_by",
+                    "description": "One of the following: [default, fb_likes, fb_shares, fb_comments, fb_total, twitter, linkedin, fb_tw_and_li, nw_score, nw_max_score]. Defaults to default",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "time_period",
+                    "description": "Filters articles published within the last X hours. X can be 1, 3, 12, 24 or 168 hours)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "video_only",
+                    "description": "true or false. Defaults to false.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "rawModeData": ""
+        },
+        {
+            "id": "0bec6b92b7802b1dc6ab743f8e3b68eb",
+            "name": "Region",
+            "url": "httpsapi.newswhip.comv1\/region\/",
+            "description": "Retrieve list of regions",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "key",
+                    "description": "API Key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "rawModeData": ""
+        },
+        {
+            "id": "958d6db944dfc11cc35654bedfa3163f",
+            "name": "Region",
+            "url": "httpsapi.newswhip.comv1\/region\/{region}\/{category}\/{time_period}",
+            "description": "Search news by region",
+            "data": [],
+            "dataMode": "raw",
+            "headerData": null,
+            "method": "get",
+            "pathVariableData": [],
+            "queryParams": [
+                {
+                    "key": "category",
+                    "description": "Filters articles by {category}.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "key",
+                    "description": "API Key",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "region",
+                    "description": "Filters articles published in that {region}",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "sort_by",
+                    "description": "One of the following: [default, fb_likes, fb_shares, fb_comments, fb_total, twitter, linkedin, fb_tw_and_li, nw_score, nw_max_score]. Defaults to default",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "time_period",
+                    "description": "Filters articles published within the last X hours. X can be 1, 3, 12, 24 or 168 hours)",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                },
+                {
+                    "key": "video_only",
+                    "description": "true or false. Defaults to false.",
+                    "value": "",
+                    "equals": true,
+                    "enabled": true
+                }
+            ],
+            "auth": null,
+            "events": null,
+            "folder": null,
+            "protocolProfileBehavior": {
+                "disableBodyPruning": true
+            },
+            "responses": [],
+            "currentHelper": null,
+            "helperAttributes": null,
+            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "rawModeData": ""
+        }
+    ]
+}

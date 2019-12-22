@@ -1,5 +1,5 @@
 {
-    "id": "a956236c5f8e0ca429420a23eb30002c",
+    "id": "7036263df03ebd27f9316f1ceee3853d",
     "name": "News Whip API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "33f3e75485a2f1717ab3659d51ca7d88",
+            "id": "3cf834ac6516b2398362163b30d99265",
             "name": "Local",
             "url": "httpsapi.newswhip.comv1\/local\/",
             "description": "Pull list of localities.",
@@ -37,11 +37,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "collectionId": "7036263df03ebd27f9316f1ceee3853d",
             "rawModeData": ""
         },
         {
-            "id": "46881db68f814b7476243288adc009e1",
+            "id": "1808a83749b61c9b19cd02260dd9a83b",
             "name": "Local",
             "url": "httpsapi.newswhip.comv1\/local\/{city}\/All\/{time_period}",
             "description": "Search local news.",
@@ -96,11 +96,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "collectionId": "7036263df03ebd27f9316f1ceee3853d",
             "rawModeData": ""
         },
         {
-            "id": "3b7d085ba16d51308fbd06a08f684889",
+            "id": "1a573a0c71fdfd4950a21bf5c3d04270",
             "name": "Publisher",
             "url": "httpsapi.newswhip.comv1\/publisher\/",
             "description": "Pull publishers.",
@@ -127,11 +127,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "collectionId": "7036263df03ebd27f9316f1ceee3853d",
             "rawModeData": ""
         },
         {
-            "id": "91dfbc71047487a4298349993ec69d14",
+            "id": "fa8c57dfa45d73f14fa1db6f4608bb18",
             "name": "Publisher",
             "url": "httpsapi.newswhip.comv1\/publisher\/{publisher}\/{time_period}",
             "description": "Search news by publisiher.",
@@ -186,11 +186,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "collectionId": "7036263df03ebd27f9316f1ceee3853d",
             "rawModeData": ""
         },
         {
-            "id": "0bec6b92b7802b1dc6ab743f8e3b68eb",
+            "id": "c7ed309c2cdab708e554c6b50fcc0947",
             "name": "Region",
             "url": "httpsapi.newswhip.comv1\/region\/",
             "description": "Retrieve list of regions",
@@ -217,11 +217,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "collectionId": "7036263df03ebd27f9316f1ceee3853d",
             "rawModeData": ""
         },
         {
-            "id": "958d6db944dfc11cc35654bedfa3163f",
+            "id": "6dd4964a5e8af02aa334bdfdf0b2326c",
             "name": "Region",
             "url": "httpsapi.newswhip.comv1\/region\/{region}\/{category}\/{time_period}",
             "description": "Search news by region",
@@ -283,7 +283,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a956236c5f8e0ca429420a23eb30002c",
+            "collectionId": "7036263df03ebd27f9316f1ceee3853d",
             "rawModeData": ""
         }
     ]

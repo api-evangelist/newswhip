@@ -1,0 +1,265 @@
+openapi: 3.1.0
+info:
+  title: quick-start-api-formerly-get-api Articles Publisher API
+  version: '1'
+servers:
+- url: https://api.newswhip.com/v1
+tags:
+- name: Publisher
+paths:
+  /publisher/{Publisher}/{Time_Period}:
+    get:
+      summary: /publisher
+      description: ''
+      operationId: publisher
+      parameters:
+      - name: Publisher
+        in: path
+        description: Any domain or subdomain. i.e. nytimes.com, blog.newswhip.com
+        schema:
+          type: string
+          default: nytimes.com
+        required: true
+      - name: Time_Period
+        in: path
+        description: Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours
+        schema:
+          type: integer
+          format: int32
+          default: 24
+        required: true
+      - name: key
+        in: query
+        description: Your API key.
+        required: true
+        schema:
+          type: string
+          default: DevHub
+      - name: size
+        in: query
+        description: The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500.
+        schema:
+          type: integer
+          format: int32
+          default: 150
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"total_match\": 702,\n  \"articles\": [\n    {\n      \"delta_time\": 211,\n      \"recent_fb_counts\": 3760,\n      \"recent_tw_counts\": 188,\n      \"videos\": [],\n      \"relatedStories\": [],\n      \"fb_data\": {\n        \"total_engagement_count\": 48195,\n        \"total_count_delta\": 3760,\n        \"delta_period\": 211,\n        \"delta_period_unit\": \"m\",\n        \"fb_overperforming\": 2.884757949529689\n      },\n      \"tw_data\": {\n        \"tw_count\": 7431,\n        \"total_count_delta\": 188,\n        \"delta_period\": 211,\n        \"delta_period_unit\": \"m\",\n        \"tw_overperforming\": 4.646973523569058\n      },\n      \"li_data\": {\n        \"li_count\": 0,\n        \"total_count_delta\": 0,\n        \"delta_period\": 211,\n        \"delta_period_unit\": \"m\"\n      },\n      \"pi_data\": {\n        \"pi_count\": 1,\n        \"delta_period\": 211,\n        \"delta_period_unit\": \"m\"\n      },\n      \"predicted_interactions\": 74438,\n      \"predicted_timestamp\": 1522571075969,\n      \"uuid\": \"3a4c6b20-3443-11e8-ab88-49c2dc76b82d\",\n      \"publication_timestamp\": 1522432393000,\n      \"link\": \"https://www.nytimes.com/2018/03/30/us/stephon-clark-independent-autopsy.html\",\n      \"headline\": \"Stephon Clark Was Shot 8 Times Primarily in His Back, Family-Ordered Autopsy Finds\",\n      \"excerpt\": \"A lawyer for the family said the findings proved that Mr. Clark could not have been moving in a threatening fashion toward Sacramento officers when they opened fire.\",\n      \"keywords\": \"Stephon Clark,Police Brutality;Police Misconduct;Police Shootings\",\n      \"source\": {\n        \"publisher\": \"nytimes.com\",\n        \"domain\": \"nytimes.com\",\n        \"link\": \"https://nytimes.com\",\n        \"country\": \"United States\",\n        \"country_code\": \"us\",\n        \"language\": \"en\"\n      },\n      \"image_link\": \"https://static01.nyt.com/images/2018/03/22/autossell/sacramento-schooting2/sacramento-schooting2-facebookJumbo-v2.jpg\",\n      \"has_video\": true,\n      \"nw_score\": 280.85125702122036,\n      \"max_nw_score\": 3212.7672437775227,\n      \"topics\": [\n        {\n          \"id\": 2,\n          \"name\": \"News\"\n        },\n        {\n          \"id\": 668,\n          \"name\": \"Events\"\n        }\n      ],\n      \"authors\": [\n        \"FRANCES ROBLES\"\n      ],\n      \"entities\": [\n        \"Sacramento\",\n        \"Mr Clark\"\n      ]\n    }\n  ]\n}"
+              schema:
+                type: object
+                properties:
+                  total_match:
+                    type: integer
+                    example: 702
+                    default: 0
+                  articles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        delta_time:
+                          type: integer
+                          example: 211
+                          default: 0
+                        recent_fb_counts:
+                          type: integer
+                          example: 3760
+                          default: 0
+                        recent_tw_counts:
+                          type: integer
+                          example: 188
+                          default: 0
+                        videos:
+                          type: array
+                        relatedStories:
+                          type: array
+                        fb_data:
+                          type: object
+                          properties:
+                            total_engagement_count:
+                              type: integer
+                              example: 48195
+                              default: 0
+                            total_count_delta:
+                              type: integer
+                              example: 3760
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 211
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                            fb_overperforming:
+                              type: number
+                              example: 2.884757949529689
+                              default: 0
+                        tw_data:
+                          type: object
+                          properties:
+                            tw_count:
+                              type: integer
+                              example: 7431
+                              default: 0
+                            total_count_delta:
+                              type: integer
+                              example: 188
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 211
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                            tw_overperforming:
+                              type: number
+                              example: 4.646973523569058
+                              default: 0
+                        li_data:
+                          type: object
+                          properties:
+                            li_count:
+                              type: integer
+                              example: 0
+                              default: 0
+                            total_count_delta:
+                              type: integer
+                              example: 0
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 211
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                        pi_data:
+                          type: object
+                          properties:
+                            pi_count:
+                              type: integer
+                              example: 1
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 211
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                        predicted_interactions:
+                          type: integer
+                          example: 74438
+                          default: 0
+                        predicted_timestamp:
+                          type: integer
+                          example: 1522571075969
+                          default: 0
+                        uuid:
+                          type: string
+                          example: 3a4c6b20-3443-11e8-ab88-49c2dc76b82d
+                        publication_timestamp:
+                          type: integer
+                          example: 1522432393000
+                          default: 0
+                        link:
+                          type: string
+                          example: https://www.nytimes.com/2018/03/30/us/stephon-clark-independent-autopsy.html
+                        headline:
+                          type: string
+                          example: Stephon Clark Was Shot 8 Times Primarily in His Back, Family-Ordered Autopsy Finds
+                        excerpt:
+                          type: string
+                          example: A lawyer for the family said the findings proved that Mr. Clark could not have been moving in a threatening fashion toward Sacramento officers when they opened fire.
+                        keywords:
+                          type: string
+                          example: Stephon Clark,Police Brutality;Police Misconduct;Police Shootings
+                        source:
+                          type: object
+                          properties:
+                            publisher:
+                              type: string
+                              example: nytimes.com
+                            domain:
+                              type: string
+                              example: nytimes.com
+                            link:
+                              type: string
+                              example: https://nytimes.com
+                            country:
+                              type: string
+                              example: United States
+                            country_code:
+                              type: string
+                              example: us
+                            language:
+                              type: string
+                              example: en
+                        image_link:
+                          type: string
+                          example: https://static01.nyt.com/images/2018/03/22/autossell/sacramento-schooting2/sacramento-schooting2-facebookJumbo-v2.jpg
+                        has_video:
+                          type: boolean
+                          example: true
+                          default: true
+                        nw_score:
+                          type: number
+                          example: 280.85125702122036
+                          default: 0
+                        max_nw_score:
+                          type: number
+                          example: 3212.7672437775227
+                          default: 0
+                        topics:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 2
+                                default: 0
+                              name:
+                                type: string
+                                example: News
+                        authors:
+                          type: array
+                          items:
+                            type: string
+                            example: FRANCES ROBLES
+                        entities:
+                          type: array
+                          items:
+                            type: string
+                            example: Sacramento
+        '400':
+          description: '400'
+          content:
+            text/plain:
+              examples:
+                Result:
+                  value: "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Bad Request</title>\n        <link rel=\"shortcut icon\" href=\"data:image/png;\">\n        <style>\n            html, body, pre {\n                margin: 0;\n                padding: 0;\n                font-family: Monaco, 'Lucida Console', monospace;\n                background: #ECECEC;\n            }\n            h1 {\n                margin: 0;\n                background: #AD632A;\n                padding: 20px 45px;\n                color: #fff;\n                text-shadow: 1px 1px 1px rgba(0,0,0,.3);\n                border-bottom: 1px solid #9F5805;\n                font-size: 28px;\n            }\n            p#detail {\n                margin: 0;\n                padding: 15px 45px;\n                background: #F6A960;\n                border-top: 4px solid #D29052;\n                color: #733512;\n                text-shadow: 1px 1px 1px rgba(255,255,255,.3);\n                font-size: 14px;\n                border-bottom: 1px solid #BA7F5B;\n            }\n        </style>\n    </head>\n    <body>\n        <h1>Bad Request</h1>\n\n        <p id=\"detail\">\n            For request 'GET /api/v1/publisher/your_pubisher/your_time_period?key=DevHub' [Cannot parse parameter time as Int: For input string: &quot;null&quot;]\n        </p>\n\n    </body>\n</html>"
+      deprecated: false
+      security: []
+      x-readme:
+        code-samples:
+        - language: curl
+          code: curl "https://api.newswhip.com/v1/publisher/nytimes.com/24?key=DevHub"
+        samples-languages:
+        - curl
+      tags:
+      - Publisher
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: query
+      name: key
+      x-default: DevKey

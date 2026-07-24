@@ -1,0 +1,272 @@
+openapi: 3.1.0
+info:
+  title: quick-start-api-formerly-get-api Articles Local API
+  version: '1'
+servers:
+- url: https://api.newswhip.com/v1
+tags:
+- name: Local
+paths:
+  /local/{City}/All/{Time_Period}:
+    get:
+      summary: /local
+      description: ''
+      operationId: local
+      parameters:
+      - name: City
+        in: path
+        description: Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein.
+        schema:
+          type: string
+          default: Seattle, WA
+        required: true
+      - name: Time_Period
+        in: path
+        description: Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours
+        schema:
+          type: integer
+          format: int32
+          default: 24
+        required: true
+      - name: key
+        in: query
+        description: Your API key.
+        required: true
+        schema:
+          type: string
+          default: DevHub
+      - name: size
+        in: query
+        description: The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500.
+        schema:
+          type: integer
+          format: int32
+          default: 150
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{ \n  \"total_match\":620,\n  \"articles\": [\n    {\n      \"delta_time\": 249,\n      \"recent_fb_counts\": 41,\n      \"recent_tw_counts\": 1,\n      \"videos\": [\n        \"http://www.youtube.com/watch?v=2vk8T35bbQc\",\n        \"http://www.youtube.com/watch?v=28G9VLQezVg\",\n        \"http://www.youtube.com/watch?v=c02O4Wvo7QI\",\n        \"http://www.youtube.com/watch?v=TuuumQ4hcDg\",\n        \"http://www.youtube.com/watch?v=nnFZKnlQlDw\"\n      ],\n      \"relatedStories\": [],\n      \"fb_data\": {\n        \"total_engagement_count\": 2422,\n        \"total_count_delta\": 41,\n        \"delta_period\": 249,\n        \"delta_period_unit\": \"m\"\n      },\n      \"tw_data\": {\n        \"tw_count\": 7,\n        \"total_count_delta\": 1,\n        \"delta_period\": 249,\n        \"delta_period_unit\": \"m\"\n      },\n      \"li_data\": {\n        \"li_count\": 0,\n        \"total_count_delta\": 0,\n        \"delta_period\": 249,\n        \"delta_period_unit\": \"m\"\n      },\n      \"pi_data\": {\n        \"pi_count\": 1,\n        \"delta_period\": 249,\n        \"delta_period_unit\": \"m\"\n      },\n      \"predicted_interactions\": 2638,\n      \"predicted_timestamp\": 1522561756839,\n      \"uuid\": \"184c2eb0-343f-11e8-9e4c-83fcdd16cc63\",\n      \"publication_timestamp\": 1522430612000,\n      \"link\": \"http://bipartisanreport.com/2018/03/30/breaking-fbi-detains-trump-ally-at-airport-donald-feeling-robert-mueller-heat/\",\n      \"headline\": \"BREAKING: FBI Detains Trump Ally At Airport - Donald Feeling Robert Mueller Heat\",\n      \"excerpt\": \"The Russia investigation is continuing to proceed, whether the president and his allies are fond of the idea or not. Although the House Intelligence Committee moved to end its investigation, other lines of inquiry are still very much open. Special Counsel Robert Mueller, for instance, has proven that he will leave no stone unturned in … Continued\",\n      \"keywords\": \"\",\n      \"source\": {\n        \"publisher\": \"bipartisanreport.com\",\n        \"domain\": \"bipartisanreport.com\",\n        \"link\": \"http://bipartisanreport.com\",\n        \"country\": \"United States\",\n        \"country_code\": \"us\",\n        \"language\": \"en\"\n      },\n      \"image_link\": \"http://cdn.bipartisanreport.com/wordpress/wp-content/uploads/2018/03/935503612.jpg\",\n      \"has_video\": true,\n      \"nw_score\": 6.6169187100695535,\n      \"max_nw_score\": 1029.80745168683,\n      \"topics\": [\n        {\n          \"id\": 2,\n          \"name\": \"News\"\n        },\n        {\n          \"id\": 20,\n          \"name\": \"Politics\"\n        }\n      ],\n      \"authors\": [\n        \"Caleb Newton\"\n      ],\n      \"entities\": [\n        \"Russia\",\n        \"House Intelligence Committee\",\n        \"Robert Mueller\"\n      ]\n    }\n  ]\n}"
+              schema:
+                type: object
+                properties:
+                  total_match:
+                    type: integer
+                    example: 620
+                    default: 0
+                  articles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        delta_time:
+                          type: integer
+                          example: 249
+                          default: 0
+                        recent_fb_counts:
+                          type: integer
+                          example: 41
+                          default: 0
+                        recent_tw_counts:
+                          type: integer
+                          example: 1
+                          default: 0
+                        videos:
+                          type: array
+                          items:
+                            type: string
+                            example: http://www.youtube.com/watch?v=2vk8T35bbQc
+                        relatedStories:
+                          type: array
+                        fb_data:
+                          type: object
+                          properties:
+                            total_engagement_count:
+                              type: integer
+                              example: 2422
+                              default: 0
+                            total_count_delta:
+                              type: integer
+                              example: 41
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 249
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                        tw_data:
+                          type: object
+                          properties:
+                            tw_count:
+                              type: integer
+                              example: 7
+                              default: 0
+                            total_count_delta:
+                              type: integer
+                              example: 1
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 249
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                        li_data:
+                          type: object
+                          properties:
+                            li_count:
+                              type: integer
+                              example: 0
+                              default: 0
+                            total_count_delta:
+                              type: integer
+                              example: 0
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 249
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                        pi_data:
+                          type: object
+                          properties:
+                            pi_count:
+                              type: integer
+                              example: 1
+                              default: 0
+                            delta_period:
+                              type: integer
+                              example: 249
+                              default: 0
+                            delta_period_unit:
+                              type: string
+                              example: m
+                        predicted_interactions:
+                          type: integer
+                          example: 2638
+                          default: 0
+                        predicted_timestamp:
+                          type: integer
+                          example: 1522561756839
+                          default: 0
+                        uuid:
+                          type: string
+                          example: 184c2eb0-343f-11e8-9e4c-83fcdd16cc63
+                        publication_timestamp:
+                          type: integer
+                          example: 1522430612000
+                          default: 0
+                        link:
+                          type: string
+                          example: http://bipartisanreport.com/2018/03/30/breaking-fbi-detains-trump-ally-at-airport-donald-feeling-robert-mueller-heat/
+                        headline:
+                          type: string
+                          example: 'BREAKING: FBI Detains Trump Ally At Airport - Donald Feeling Robert Mueller Heat'
+                        excerpt:
+                          type: string
+                          example: The Russia investigation is continuing to proceed, whether the president and his allies are fond of the idea or not. Although the House Intelligence Committee moved to end its investigation, other lines of inquiry are still very much open. Special Counsel Robert Mueller, for instance, has proven that he will leave no stone unturned in … Continued
+                        keywords:
+                          type: string
+                          example: ''
+                        source:
+                          type: object
+                          properties:
+                            publisher:
+                              type: string
+                              example: bipartisanreport.com
+                            domain:
+                              type: string
+                              example: bipartisanreport.com
+                            link:
+                              type: string
+                              example: http://bipartisanreport.com
+                            country:
+                              type: string
+                              example: United States
+                            country_code:
+                              type: string
+                              example: us
+                            language:
+                              type: string
+                              example: en
+                        image_link:
+                          type: string
+                          example: http://cdn.bipartisanreport.com/wordpress/wp-content/uploads/2018/03/935503612.jpg
+                        has_video:
+                          type: boolean
+                          example: true
+                          default: true
+                        nw_score:
+                          type: number
+                          example: 6.6169187100695535
+                          default: 0
+                        max_nw_score:
+                          type: number
+                          example: 1029.80745168683
+                          default: 0
+                        topics:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                                example: 2
+                                default: 0
+                              name:
+                                type: string
+                                example: News
+                        authors:
+                          type: array
+                          items:
+                            type: string
+                            example: Caleb Newton
+                        entities:
+                          type: array
+                          items:
+                            type: string
+                            example: Russia
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": {\n    \"message\": \"time parameter is invalid. Received: 9999999\",\n    \"id\": \"7554ca00-30ab-4ba0-a472-4e533e76e59a\"\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: 'time parameter is invalid. Received: 9999999'
+                      id:
+                        type: string
+                        example: 7554ca00-30ab-4ba0-a472-4e533e76e59a
+      deprecated: false
+      security: []
+      x-readme:
+        code-samples:
+        - language: curl
+          code: curl "https://api.newswhip.com/v1/local/Seattle, WA/All/24?key=DevHub"
+        samples-languages:
+        - curl
+      tags:
+      - Local
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: query
+      name: key
+      x-default: DevKey

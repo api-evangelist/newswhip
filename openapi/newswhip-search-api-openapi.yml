@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: quick-start-api-formerly-get-api Articles Search API
+  version: '1'
+servers:
+- url: https://api.newswhip.com/v1
+tags:
+- name: Search
+paths:
+  /search:
+    get:
+      summary: /search
+      description: ''
+      operationId: search
+      parameters:
+      - name: q
+        in: query
+        description: The keywords or phrase that you'd like to search for
+        required: true
+        schema:
+          type: string
+          default: happiness
+      - name: key
+        in: query
+        description: Your API key.
+        required: true
+        schema:
+          type: string
+          default: DevHub
+      - name: size
+        in: query
+        description: The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500.
+        schema:
+          type: integer
+          format: int32
+          default: 150
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"total_match\":620,\n  \"articles\": [\n    {\n      \"delta_time\": 263,\n      \"recent_fb_counts\": 48,\n      \"recent_tw_counts\": 5,\n      \"relatedStories\": [\n        {\n          \"delta_time\": 189,\n          \"recent_fb_counts\": 157,\n          \"recent_tw_counts\": 0,\n          \"relatedStories\": [],\n          \"fb_data\": {\n            \"total_engagement_count\": 351,\n            \"total_count_delta\": 157,\n            \"delta_period\": 189,\n            \"delta_period_unit\": \"m\"\n          },\n          \"tw_data\": {\n            \"tw_count\": 0,\n            \"total_count_delta\": 0,\n            \"delta_period\": 189,\n            \"delta_period_unit\": \"m\"\n          },\n          \"li_data\": {\n            \"li_count\": 0,\n            \"total_count_delta\": 0,\n            \"delta_period\": 189,\n            \"delta_period_unit\": \"m\"\n          },\n          \"pi_data\": {\n            \"pi_count\": 0,\n            \"delta_period\": 189,\n            \"delta_period_unit\": \"m\"\n          },\n          \"predicted_interactions\": 1162,\n          \"predicted_timestamp\": 1522560805758,\n          \"uuid\": \"fd7f0100-34a4-11e8-a52e-a128b18e226e\",\n          \"publication_timestamp\": 1522474219000,\n          \"link\": \"http://www.abc.net.au/triplej/news/musicnews/lana-del-rey-shares-sneak-peak-of-new-music-while-in-australia/9606794\",\n          \"headline\": \"Lana Del Rey previews new song 'Happiness Is A Butterfly' while in Australia\",\n          \"excerpt\": \"\\\"Sing it for my babies on the tourlyfe\\\"\",\n          \"keywords\": \"lana del rey, preview, australia\",\n          \"source\": {\n            \"publisher\": \"abc.net.au\",\n            \"domain\": \"abc.net.au\",\n            \"link\": \"http://abc.net.au\",\n            \"country\": \"Australia\",\n            \"country_code\": \"au\",\n            \"language\": \"en\"\n          },\n          \"image_link\": \"http://www.abc.net.au/cm/rimage/9335302-16x9-large.jpg?v=2\",\n          \"has_video\": false,\n          \"nw_score\": 52.11315038623968,\n          \"max_nw_score\": 249.86289135221006,\n          \"topics\": [],\n          \"authors\": null,\n          \"entities\": []\n        }\n    ]\n}"
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": {\n    \"message\": \"query can't be empty\",\n    \"id\": \"65773da0-5e3c-4a68-bb58-eaf4ccc99a26\"\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: query can't be empty
+                      id:
+                        type: string
+                        example: 65773da0-5e3c-4a68-bb58-eaf4ccc99a26
+      deprecated: false
+      security: []
+      x-readme:
+        code-samples:
+        - language: curl
+          code: curl "https://api.newswhip.com/v1/search?q=happiness&key=DevHub"
+        samples-languages:
+        - curl
+      tags:
+      - Search
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: query
+      name: key
+      x-default: DevKey

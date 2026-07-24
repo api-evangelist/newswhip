@@ -1,0 +1,161 @@
+openapi: 3.1.0
+info:
+  title: quick-start-api-formerly-get-api Articles TwitterInfluencers API
+  version: '1'
+servers:
+- url: https://api.newswhip.com/v1
+tags:
+- name: TwitterInfluencers
+paths:
+  /twitterInfluencers:
+    post:
+      summary: /twitterInfluencers
+      description: ''
+      operationId: twitterinfluencers
+      parameters:
+      - name: key
+        in: query
+        description: Your API key.
+        required: true
+        schema:
+          type: string
+          default: DevHub
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - filters
+              properties:
+                filters:
+                  type: array
+                  description: Choose from `publisher`, `categories`, `country_code`, `headline`, `summary`, `region_code`, `language`, `domain`.
+                  items:
+                    type: string
+                from:
+                  type: integer
+                  description: Unix timestamp in milliseconds. Filters articles published after {from}. Unix timestamp in milliseconds. Defaults to a week ago.
+                  default: null
+                  format: int64
+                to:
+                  type: integer
+                  description: Unix timestamp in milliseconds. Filters articles published before {to}. Unix timestamp in milliseconds. Defaults to now.
+                  default: null
+                  format: int64
+                language:
+                  type: string
+                  description: Two letter ISO 639-1 language code. Defaults to any language.
+                size:
+                  type: integer
+                  description: Number of influencers to return (max 500). Defaults to 200. The maximum you can specify is 5,000.
+                  default: 200
+                  format: int32
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"twitterInfluencers\": [\n    {\n      \"twitter_id\": 168683422,\n      \"twitter_handle\": \"BigHitEnt\",\n      \"likes_count\": 6,\n      \"followers_count\": 6054861,\n      \"following_count\": 18,\n      \"statuses_count\": 4711,\n      \"max_retweet_value\": 90757,\n      \"social_referrals\": [\n        {\n          \"article_id\": \"43b5dc60-3140-11e8-be5b-ef989ddb8d11\",\n          \"twitter_url\": \"https://twitter.com/any/status/978421147711651840\",\n          \"favourite_count\": 247379,\n          \"rt_count\": 90757,\n          \"created_at\": 1522108754000,\n          \"description\": \"How did they do the impossible, and crack the elusive and highly competitive American market? BTS is perhaps the most successful K-pop act of all time -- incredible when you consider the demand they've been able to generate in English-speaking markets.\",\n          \"article_url\": \"https://www.forbes.com/sites/cfthomas/2018/03/26/bts-the-k-pop-group-that-finally-won-america-over/\"\n        }\n      ]\n    }\n  ]\n}"
+              schema:
+                type: object
+                properties:
+                  twitterInfluencers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        twitter_id:
+                          type: integer
+                          example: 168683422
+                          default: 0
+                        twitter_handle:
+                          type: string
+                          example: BigHitEnt
+                        likes_count:
+                          type: integer
+                          example: 6
+                          default: 0
+                        followers_count:
+                          type: integer
+                          example: 6054861
+                          default: 0
+                        following_count:
+                          type: integer
+                          example: 18
+                          default: 0
+                        statuses_count:
+                          type: integer
+                          example: 4711
+                          default: 0
+                        max_retweet_value:
+                          type: integer
+                          example: 90757
+                          default: 0
+                        social_referrals:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              article_id:
+                                type: string
+                                example: 43b5dc60-3140-11e8-be5b-ef989ddb8d11
+                              twitter_url:
+                                type: string
+                                example: https://twitter.com/any/status/978421147711651840
+                              favourite_count:
+                                type: integer
+                                example: 247379
+                                default: 0
+                              rt_count:
+                                type: integer
+                                example: 90757
+                                default: 0
+                              created_at:
+                                type: integer
+                                example: 1522108754000
+                                default: 0
+                              description:
+                                type: string
+                                example: How did they do the impossible, and crack the elusive and highly competitive American market? BTS is perhaps the most successful K-pop act of all time -- incredible when you consider the demand they've been able to generate in English-speaking markets.
+                              article_url:
+                                type: string
+                                example: https://www.forbes.com/sites/cfthomas/2018/03/26/bts-the-k-pop-group-that-finally-won-america-over/
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": {\n    \"message\": \"Fields 'countryCode' is not allowed for filters query!\",\n    \"id\": \"29d06ec3-0265-48e2-a3e4-acda03933f50\"\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: Fields 'countryCode' is not allowed for filters query!
+                      id:
+                        type: string
+                        example: 29d06ec3-0265-48e2-a3e4-acda03933f50
+      deprecated: false
+      security: []
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl -H \"Content-Type: application/json\" -X POST -d '{\n    \"filters\": [\"country_code:us\"],\n    \"size\": 250\n}' \"https://api.newswhip.com/v1/twitterInfluencers?key=DevHub\""
+        samples-languages:
+        - curl
+      tags:
+      - TwitterInfluencers
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: query
+      name: key
+      x-default: DevKey

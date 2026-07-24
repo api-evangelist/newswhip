@@ -1,0 +1,264 @@
+openapi: 3.1.0
+info:
+  title: quick-start-api-formerly-get-api Articles Stats API
+  version: '1'
+servers:
+- url: https://api.newswhip.com/v1
+tags:
+- name: Stats
+paths:
+  /stats:
+    post:
+      summary: /stats
+      description: ''
+      operationId: stats
+      parameters:
+      - name: key
+        in: query
+        description: Your API key.
+        required: true
+        schema:
+          type: string
+          default: DevHub
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - filters
+              - sort_by
+              - aggregate_by
+              properties:
+                filters:
+                  type: array
+                  description: See the Notes section at the bottom of this page. The _Lucene query strings_ section shares important considerations, including the limits to the number of filters that are allowed.
+                  items:
+                    type: string
+                from:
+                  type: integer
+                  description: Unix timestamp in milliseconds. Filters articles published after {from}. Unix timestamp in milliseconds. Defaults to a week ago.
+                  default: null
+                  format: int64
+                to:
+                  type: integer
+                  description: Unix timestamp in milliseconds. Filters articles published before {to}. Unix timestamp in milliseconds. Defaults to now.
+                  default: null
+                  format: int64
+                language:
+                  type: string
+                  description: Two letter ISO 639-1 language code. Defaults to any language.
+                sort_by:
+                  type: string
+                  description: 'Can sort using the following fields: `fb_total`, `twitter`, `pinterest`, `linkedin`. You can use the following values `count`, `min`, `max`, `avg`, `sum`, `sum_of_squares`, `variance`, `std_deviation`. For example,  `fb_total.sum` or `pinterest.max`.'
+                default_fields:
+                  type: array
+                  description: Up to 3 available fields to be used filtering only by keywords (like "Barack Obama"). Defaults to `headline`, `summary`, and `authors`.
+                  default:
+                  - headline
+                  - summary
+                  - authors
+                  items:
+                    type: string
+                size:
+                  type: integer
+                  description: Max number of articles to be returned (includes relatedStories). Defaults to 200. The maximum you can specify is 5,000.
+                  default: 200
+                  format: int32
+                aggregate_by:
+                  type: string
+                  description: One of (“publisher”, “domains”, “domain”, “language”, “authors”, “categories”, “country_code”). See below for information about these options.
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "[\n  {\n    \"key\": \"globo.com\",\n    \"stats\": {\n      \"fb_total\": {\n        \"count\": 14389,\n        \"min\": 0,\n        \"max\": 305086,\n        \"avg\": 756.6266592535965,\n        \"sum\": 10887101,\n        \"sum_of_squares\": 359712851941,\n        \"variance\": 24426671.838377476,\n        \"std_deviation\": 4942.334654632108\n      },\n      \"twitter\": {\n        \"count\": 8336,\n        \"min\": 1,\n        \"max\": 3672,\n        \"avg\": 20.574136276391556,\n        \"sum\": 171506,\n        \"sum_of_squares\": 108514118,\n        \"variance\": 12594.233467344193,\n        \"std_deviation\": 112.22403248566768\n      },\n      \"pinterest\": {\n        \"count\": 268,\n        \"min\": 1,\n        \"max\": 156,\n        \"avg\": 4.742537313432836,\n        \"sum\": 1271,\n        \"sum_of_squares\": 53221,\n        \"variance\": 176.09416072621966,\n        \"std_deviation\": 13.270047502786856\n      },\n      \"linkedin\": {\n        \"count\": 0,\n        \"min\": \"Infinity\",\n        \"max\": \"-Infinity\",\n        \"avg\": \"NaN\",\n        \"sum\": 0,\n        \"sum_of_squares\": 0,\n        \"variance\": \"NaN\",\n        \"std_deviation\": \"NaN\"\n      }\n    },\n    \"total\": 11058607\n  }\n]"
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    key:
+                      type: string
+                      example: globo.com
+                    stats:
+                      type: object
+                      properties:
+                        fb_total:
+                          type: object
+                          properties:
+                            count:
+                              type: integer
+                              example: 14389
+                              default: 0
+                            min:
+                              type: integer
+                              example: 0
+                              default: 0
+                            max:
+                              type: integer
+                              example: 305086
+                              default: 0
+                            avg:
+                              type: number
+                              example: 756.6266592535965
+                              default: 0
+                            sum:
+                              type: integer
+                              example: 10887101
+                              default: 0
+                            sum_of_squares:
+                              type: integer
+                              example: 359712851941
+                              default: 0
+                            variance:
+                              type: number
+                              example: 24426671.838377476
+                              default: 0
+                            std_deviation:
+                              type: number
+                              example: 4942.334654632108
+                              default: 0
+                        twitter:
+                          type: object
+                          properties:
+                            count:
+                              type: integer
+                              example: 8336
+                              default: 0
+                            min:
+                              type: integer
+                              example: 1
+                              default: 0
+                            max:
+                              type: integer
+                              example: 3672
+                              default: 0
+                            avg:
+                              type: number
+                              example: 20.574136276391556
+                              default: 0
+                            sum:
+                              type: integer
+                              example: 171506
+                              default: 0
+                            sum_of_squares:
+                              type: integer
+                              example: 108514118
+                              default: 0
+                            variance:
+                              type: number
+                              example: 12594.233467344193
+                              default: 0
+                            std_deviation:
+                              type: number
+                              example: 112.22403248566768
+                              default: 0
+                        pinterest:
+                          type: object
+                          properties:
+                            count:
+                              type: integer
+                              example: 268
+                              default: 0
+                            min:
+                              type: integer
+                              example: 1
+                              default: 0
+                            max:
+                              type: integer
+                              example: 156
+                              default: 0
+                            avg:
+                              type: number
+                              example: 4.742537313432836
+                              default: 0
+                            sum:
+                              type: integer
+                              example: 1271
+                              default: 0
+                            sum_of_squares:
+                              type: integer
+                              example: 53221
+                              default: 0
+                            variance:
+                              type: number
+                              example: 176.09416072621966
+                              default: 0
+                            std_deviation:
+                              type: number
+                              example: 13.270047502786856
+                              default: 0
+                        linkedin:
+                          type: object
+                          properties:
+                            count:
+                              type: integer
+                              example: 0
+                              default: 0
+                            min:
+                              type: string
+                              example: Infinity
+                            max:
+                              type: string
+                              example: -Infinity
+                            avg:
+                              type: string
+                              example: NaN
+                            sum:
+                              type: integer
+                              example: 0
+                              default: 0
+                            sum_of_squares:
+                              type: integer
+                              example: 0
+                              default: 0
+                            variance:
+                              type: string
+                              example: NaN
+                            std_deviation:
+                              type: string
+                              example: NaN
+                    total:
+                      type: integer
+                      example: 11058607
+                      default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"error\": {\n    \"message\": \"List((/aggregate_by,List(ValidationError(List(error.path.missing),WrappedArray()))), (/sort_by,List(ValidationError(List(error.path.missing),WrappedArray()))))\",\n    \"id\": \"7b5212d7-c1b8-46c0-beba-da916ac58960\"\n  }\n}"
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: object
+                    properties:
+                      message:
+                        type: string
+                        example: List((/aggregate_by,List(ValidationError(List(error.path.missing),WrappedArray()))), (/sort_by,List(ValidationError(List(error.path.missing),WrappedArray()))))
+                      id:
+                        type: string
+                        example: 7b5212d7-c1b8-46c0-beba-da916ac58960
+      deprecated: false
+      security: []
+      x-readme:
+        code-samples:
+        - language: curl
+          code: "curl -H \"Content-Type: application/json\" -X POST -d '{\n    \"filters\": [\"3d printing\"],\n    \"language\" : \"en\",\n    \"sort_by\" : \"fb_total.sum\",\n    \"aggregate_by\" : \"domain\"\n}' \"https://api.newswhip.com/v1/stats?key=DevHub\""
+        samples-languages:
+        - curl
+      tags:
+      - Stats
+components:
+  securitySchemes:
+    sec0:
+      type: apiKey
+      in: query
+      name: key
+      x-default: DevKey

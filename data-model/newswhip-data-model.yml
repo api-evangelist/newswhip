@@ -1,0 +1,53 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/newswhip-openapi.yml
+docs: https://developer.newswhip.com/docs/data-dictionary
+entities:
+- name: Article
+  description: A tracked article/story with engagement and predicted-engagement metrics.
+  surfaced_by:
+  - articles
+  - articlesByHrefs
+  - region
+  - publisher
+  - local
+  - search
+- name: FacebookPost
+  description: A Facebook post with engagement metrics.
+  surfaced_by:
+  - fbPosts
+- name: Statistics
+  description: Aggregated engagement statistics over a query.
+  surfaced_by:
+  - stats
+- name: Influencer
+  description: A top Facebook page or Twitter account driving engagement.
+  surfaced_by:
+  - fbInfluencers
+  - twitterInfluencers
+- name: Publisher
+  description: A publisher/domain that articles belong to.
+  surfaced_by:
+  - publisher
+- name: Region
+  description: A geographic region / locale used for ranked feeds.
+  surfaced_by:
+  - region
+  - local
+relationships:
+- from: Article
+  to: Publisher
+  kind: belongs_to
+  via: publisher
+- from: Article
+  to: Region
+  kind: belongs_to
+  via: region
+- from: Influencer
+  to: Article
+  kind: has_many
+  via: engagement
+- from: Statistics
+  to: Article
+  kind: aggregates
+  via: query

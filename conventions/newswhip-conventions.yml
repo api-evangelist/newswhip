@@ -1,0 +1,43 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newswhip.com/docs
+authentication:
+  style: api-key
+  location: query
+  parameter: key
+  docs: https://developer.newswhip.com/docs/authentication
+  ref: authentication/newswhip-authentication.yml
+idempotency:
+  supported: false
+  notes: No idempotency-key mechanism documented; GET endpoints are naturally idempotent, POST search/query
+    endpoints are read-only queries expressed as POST bodies.
+pagination:
+  style: size-limited
+  params:
+  - size
+  notes: Result volume is controlled with the `size` query parameter (and per-endpoint result-size limits);
+    large historical pulls page via time ranges / from-to filters in the request body.
+  docs: https://developer.newswhip.com/docs/result-size-limits
+query_language:
+  style: lucene
+  docs: https://developer.newswhip.com/docs/lucene-query-strings
+  notes: Filter bodies accept Lucene query strings for keyword/entity matching.
+time_ranges:
+  docs: https://developer.newswhip.com/docs/time-ranges
+  timezones: https://developer.newswhip.com/docs/timezones
+caching:
+  server_side: true
+  docs: https://developer.newswhip.com/docs/server-side-caching
+cors:
+  supported: true
+  docs: https://developer.newswhip.com/docs/cross-origin-resource-sharing-cors
+rate_limits:
+  documented: true
+  docs: https://developer.newswhip.com/docs/rate-limits
+  notes: Per-key rate limits apply; see docs. Exact numeric limits are provisioned per contract and not
+    published.
+error_envelope:
+  format: json
+  ref: errors/newswhip-problem-types.yml
+  docs: https://developer.newswhip.com/docs/errors
+versioning_ref: lifecycle/newswhip-lifecycle.yml

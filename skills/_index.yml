@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: generated
+skills:
+- file: newswhip-discover-trending-articles.md
+  name: Discover trending articles by keyword
+  api: openapi/newswhip-openapi.yml
+  operations:
+  - articles
+- file: newswhip-articles-by-url.md
+  name: Get engagement for specific URLs
+  api: openapi/newswhip-openapi.yml
+  operations:
+  - articlesbyhrefs
+- file: newswhip-find-influencers.md
+  name: Find top influencers driving a story
+  api: openapi/newswhip-openapi.yml
+  operations:
+  - fbinfluencers
+  - twitterinfluencers

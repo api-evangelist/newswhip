@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newswhip.com/changelog
+scheme: semver-ish
+current_version: 1.10.0
+entries:
+- title: 'Removal Notice: /trendingEntities and /igPosts'
+  type: removed
+  breaking: true
+  url: https://developer.newswhip.com/changelog/removal-notice
+- title: 'Deprecation Notice: /trendingEntities'
+  type: deprecated
+  breaking: false
+  url: https://developer.newswhip.com/changelog/deprecation-notice-trendingentities
+- title: New 'Fake News' Category
+  type: added
+  breaking: false
+  url: https://developer.newswhip.com/changelog/new-fake-news-category
+- title: 'Deprecation notice: ''mayhem'' category'
+  type: deprecated
+  breaking: false
+  url: https://developer.newswhip.com/changelog/deprecation-notice-mayhem-category
+- title: Version 1.10.0
+  type: released
+  breaking: false
+- title: Version 1.9.0
+  type: released
+  breaking: false
+- title: Version 1.8.4
+  type: released
+  breaking: false
+- title: Version 1.8.3
+  type: released
+  breaking: false

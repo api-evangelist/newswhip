@@ -1,0 +1,38 @@
+# NewsWhip Developer Hub Documentation
+
+> NewsWhip APIs give you raw access to the world’s largest and fastest human engagement database; real time data trends, aggregated data, statistics, and social engagement metrics for hundreds of millions of stories, tracked since January 1, 2014. Use the power of NewsWhip data to create and customize your own solutions, perfectly suited to your company’s goals. In the hub you'll find the information you need to be successful with our API.
+
+## Guides
+- [👋 Welcome](https://developer.newswhip.com/docs/guide-welcome.md)
+- [API features](https://developer.newswhip.com/docs/api-features.md)
+- [First Steps](https://developer.newswhip.com/docs/first-steps.md)
+- [Authentication](https://developer.newswhip.com/docs/authentication.md)
+- [Rate limits](https://developer.newswhip.com/docs/rate-limits.md)
+- [Filtering tips](https://developer.newswhip.com/docs/filtering-tips.md)
+- [Result size limits](https://developer.newswhip.com/docs/result-size-limits.md)
+- [Query defaults](https://developer.newswhip.com/docs/query-defaults.md)
+- [Time ranges](https://developer.newswhip.com/docs/time-ranges.md)
+- [Lucene query strings](https://developer.newswhip.com/docs/lucene-query-strings.md)
+- [Related articles](https://developer.newswhip.com/docs/related-articles.md)
+- [Timezones](https://developer.newswhip.com/docs/timezones.md)
+- [Errors](https://developer.newswhip.com/docs/errors.md)
+- [Server-side caching](https://developer.newswhip.com/docs/server-side-caching.md)
+- [Cross-Origin Resource Sharing (CORS)](https://developer.newswhip.com/docs/cross-origin-resource-sharing-cors.md)
+- [Data dictionary](https://developer.newswhip.com/docs/data-dictionary.md)
+- [Publishers and Domains](https://developer.newswhip.com/docs/publishers-and-domains.md)
+- [Introduction to use cases](https://developer.newswhip.com/docs/introduction-to-use-cases.md)
+- [In-house dashboard](https://developer.newswhip.com/docs/in-house-dashboard.md): A wallboard-style display of breaking and trending content, to help social media managers to add their brand voice to a story.
+- [Mobile app developer](https://developer.newswhip.com/docs/mobile-app-developer.md): Provide relevant and engaging web content to thousands right in the palm of their hand, based on their interests and preferences.
+- [Introduction to tutorials](https://developer.newswhip.com/docs/introduction-to-tutorials.md)
+- [R: Get articles and show in command line](https://developer.newswhip.com/docs/r-get-articles-and-show-in-command-line.md): Using R, get started with our Historical API. Fetch an article and print the API's response in the command line.
+- [Introduction to reference data](https://developer.newswhip.com/docs/introduction-to-reference-data.md)
+- [Supported languages](https://developer.newswhip.com/docs/supported-languages.md)
+- [Topics](https://developer.newswhip.com/docs/topics.md)
+- [Regions](https://developer.newswhip.com/docs/regions.md)
+
+## Changelog
+- [Removal Notice: /trendingEntities and /igPosts](https://developer.newswhip.com/changelog/removal-notice.md)
+- [Deprecation Notice: /trendingEntities](https://developer.newswhip.com/changelog/deprecation-notice-trendingentities.md)
+- [New 'Fake News' Category](https://developer.newswhip.com/changelog/new-fake-news-category.md)
+- [Deprecation notice: ‘mayhem’ category](https://developer.newswhip.com/changelog/deprecation-notice-mayhem-category.md)
+- [How we use the API to put together monthly publisher rankings](https://developer.newswhip.com/changelog/how-we-use-the-api-to-put-together-monthly-publisher-rankings.md)

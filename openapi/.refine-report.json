@@ -1,0 +1,42 @@
+{
+  "provider": "newswhip",
+  "sources": [
+    "newswhip-articles-api-openapi.yml",
+    "newswhip-articlesbyhrefs-api-openapi.yml",
+    "newswhip-content-api-openapi.yml",
+    "newswhip-fbinfluencers-api-openapi.yml",
+    "newswhip-fbposts-api-openapi.yml",
+    "newswhip-influencers-api-openapi.yml",
+    "newswhip-local-api-openapi.yml",
+    "newswhip-publisher-api-openapi.yml",
+    "newswhip-rankings-api-openapi.yml",
+    "newswhip-region-api-openapi.yml",
+    "newswhip-search-api-openapi.yml",
+    "newswhip-social-api-openapi.yml",
+    "newswhip-statistics-api-openapi.yml",
+    "newswhip-stats-api-openapi.yml",
+    "newswhip-twitterinfluencers-api-openapi.yml"
+  ],
+  "outputs": [
+    "newswhip-articles-api-openapi.yml",
+    "newswhip-articlesbyhrefs-api-openapi.yml",
+    "newswhip-content-api-openapi.yml",
+    "newswhip-fbinfluencers-api-openapi.yml",
+    "newswhip-fbposts-api-openapi.yml",
+    "newswhip-influencers-api-openapi.yml",
+    "newswhip-local-api-openapi.yml",
+    "newswhip-publisher-api-openapi.yml",
+    "newswhip-rankings-api-openapi.yml",
+    "newswhip-region-api-openapi.yml",
+    "newswhip-search-api-openapi.yml",
+    "newswhip-social-api-openapi.yml",
+    "newswhip-statistics-api-openapi.yml",
+    "newswhip-stats-api-openapi.yml",
+    "newswhip-twitterinfluencers-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

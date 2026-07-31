@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: probed
+hosts:
+- host: newswhip.com
+  https: true
+  hsts: false
+  hsts_max_age: null
+- host: api.newswhip.com
+  https: true
+  hsts: true
+  hsts_max_age: 15724800
+  hsts_include_subdomains: true
+- host: developer.newswhip.com
+  https: true
+  hsts: true
+  hsts_max_age: 31536000
+domains:
+- domain: newswhip.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_record: v=spf1 include:_spf.google.com include:_spf.salesforce.com include:spf.mandrillapp.com include:mktomail.com
+    include:mg-spf.greenhouse.io ~all
+  dmarc: true
+  dmarc_policy: reject

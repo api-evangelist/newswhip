@@ -1,25 +1,421 @@
 aid: newswhip
 name: NewsWhip
-description: NewsWhip is a company surfaced as a portfolio company of 500-global and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  NewsWhip is a media intelligence and predictive analytics company whose API gives programmatic
+  access to the world's largest human-engagement database — real-time and predicted social
+  engagement metrics, aggregated statistics, publisher and regional rankings, and top influencers
+  for hundreds of millions of articles and social posts it has tracked across the web, Facebook and
+  Twitter since 2014. Developers query trending and predicted content, look up engagement for
+  specific URLs, and surface the pages and accounts driving a story via a JSON HTTPS API documented
+  on the NewsWhip Developer Hub. Added to the API Evangelist network as a portfolio company of 500
+  Global and enriched by the API Evangelist pipeline from NewsWhip's public developer surface.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.newswhip.com/wp-content/uploads/2022/05/API-on-phone.png
 url: https://raw.githubusercontent.com/api-evangelist/newswhip/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - 500-global
-x-tier: stub
-x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Media Intelligence
+- Social Media Analytics
+- News
+- Content Analytics
+- Engagement Data
+- Predictive Analytics
+- Media Monitoring
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: newswhip:newswhip-articles-api
+  name: NewsWhip Articles API
+  description: The Articles API from NewsWhip — 1 operation(s) for articles.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Articles
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-articles-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-articlesbyhrefs-api
+  name: NewsWhip ArticlesByHrefs API
+  description: The ArticlesByHrefs API from NewsWhip — 1 operation(s) for articlesbyhrefs.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - ArticlesByHrefs
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-articlesbyhrefs-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-content-api
+  name: NewsWhip Content API
+  description: The Content API from NewsWhip — 3 operation(s) for content.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-content-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-fbinfluencers-api
+  name: NewsWhip FbInfluencers API
+  description: The FbInfluencers API from NewsWhip — 1 operation(s) for fbinfluencers.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - FbInfluencers
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-fbinfluencers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-fbposts-api
+  name: NewsWhip FbPosts API
+  description: The FbPosts API from NewsWhip — 1 operation(s) for fbposts.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - FbPosts
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-fbposts-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-influencers-api
+  name: NewsWhip Influencers API
+  description: The Influencers API from NewsWhip — 2 operation(s) for influencers.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Influencers
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-influencers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-local-api
+  name: NewsWhip Local API
+  description: The Local API from NewsWhip — 1 operation(s) for local.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Local
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-local-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-publisher-api
+  name: NewsWhip Publisher API
+  description: The Publisher API from NewsWhip — 1 operation(s) for publisher.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Publisher
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-publisher-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-rankings-api
+  name: NewsWhip Rankings API
+  description: The Rankings API from NewsWhip — 3 operation(s) for rankings.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Rankings
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-rankings-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-region-api
+  name: NewsWhip Region API
+  description: The Region API from NewsWhip — 1 operation(s) for region.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Region
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-region-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-search-api
+  name: NewsWhip Search API
+  description: The Search API from NewsWhip — 1 operation(s) for search.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Search
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-search-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-social-api
+  name: NewsWhip Social API
+  description: The Social API from NewsWhip — 1 operation(s) for social.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Social
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-social-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-statistics-api
+  name: NewsWhip Statistics API
+  description: The Statistics API from NewsWhip — 1 operation(s) for statistics.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Statistics
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-statistics-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-stats-api
+  name: NewsWhip Stats API
+  description: The Stats API from NewsWhip — 1 operation(s) for stats.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - Stats
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-stats-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
+- aid: newswhip:newswhip-twitterinfluencers-api
+  name: NewsWhip TwitterInfluencers API
+  description: The TwitterInfluencers API from NewsWhip — 1 operation(s) for twitterinfluencers.
+  humanURL: https://developer.newswhip.com/
+  baseURL: https://api.newswhip.com/v1
+  tags:
+  - TwitterInfluencers
+  properties:
+  - type: OpenAPI
+    url: openapi/newswhip-twitterinfluencers-api-openapi.yml
+  - type: Documentation
+    url: https://developer.newswhip.com/docs
+  - type: APIReference
+    url: https://developer.newswhip.com/reference
+  - type: Authentication
+    url: authentication/newswhip-authentication.yml
+  - type: ErrorCatalog
+    url: errors/newswhip-problem-types.yml
+  - type: Conventions
+    url: conventions/newswhip-conventions.yml
+  - type: DataModel
+    url: data-model/newswhip-data-model.yml
 common:
 - type: Website
   url: https://newswhip.com
+- type: DeveloperPortal
+  url: https://developer.newswhip.com/
+- type: Documentation
+  url: https://developer.newswhip.com/docs
+- type: APIReference
+  url: https://developer.newswhip.com/reference
+- type: GettingStarted
+  url: https://developer.newswhip.com/docs/first-steps
+- type: Blog
+  url: https://www.newswhip.com/blog/
+- type: Support
+  url: https://newswhipsupport.sproutsocial.com/hc/en-us
+- type: GitHubOrganization
+  url: https://github.com/NewsWhip
+- type: SignUp
+  url: http://go.newswhip.com/API-Access-Request.html
+- type: TermsOfService
+  url: https://www.newswhip.com/newswhip-terms-conditions/
+- type: PrivacyPolicy
+  url: https://www.newswhip.com/newswhip-privacy-policy/
+- type: ChangeLog
+  url: changelog/newswhip-changelog.yml
+- type: Lifecycle
+  url: lifecycle/newswhip-lifecycle.yml
+- type: Deprecation
+  url: https://developer.newswhip.com/changelog
+- type: Conformance
+  url: conformance/newswhip-conformance.yml
+- type: DomainSecurity
+  url: security/newswhip-domain-security.yml
+- type: MCPServer
+  url: mcp/newswhip-mcp.yml
+- type: LLMsTxt
+  url: llms/newswhip-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

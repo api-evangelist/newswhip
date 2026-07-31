@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/newswhip-openapi.yml
+server:
+  name: newswhip
+  transport: http
+tools:
+- name: region
+  description: GET /region/{Region}/{Category}/{Time_Period}
+  source_operation: openapi/newswhip-openapi.yml#region
+- name: publisher
+  description: GET /publisher/{Publisher}/{Time_Period}
+  source_operation: openapi/newswhip-openapi.yml#publisher
+- name: local
+  description: GET /local/{City}/All/{Time_Period}
+  source_operation: openapi/newswhip-openapi.yml#local
+- name: search
+  description: GET /search
+  source_operation: openapi/newswhip-openapi.yml#search
+- name: articles
+  description: POST /articles
+  source_operation: openapi/newswhip-openapi.yml#articles
+- name: fbposts
+  description: POST /fbPosts
+  source_operation: openapi/newswhip-openapi.yml#fbposts
+- name: stats
+  description: POST /stats
+  source_operation: openapi/newswhip-openapi.yml#stats
+- name: twitterinfluencers
+  description: POST /twitterInfluencers
+  source_operation: openapi/newswhip-openapi.yml#twitterinfluencers
+- name: fbinfluencers
+  description: POST /fbInfluencers
+  source_operation: openapi/newswhip-openapi.yml#fbinfluencers
+- name: articlesbyhrefs
+  description: POST /articlesByHrefs
+  source_operation: openapi/newswhip-openapi.yml#articlesbyhrefs

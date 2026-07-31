@@ -1,0 +1,68 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/newswhip-openapi.yml
+docs: https://developer.newswhip.com/docs/errors
+format: custom-json
+notes: Errors are returned as JSON with an HTTP status code. The OpenAPI declares 400 for each operation;
+  the docs errors reference additionally documents authentication (invalid/missing key) and rate-limit
+  responses. Not RFC 9457 application/problem+json.
+problems:
+- status: 400
+  title: Bad Request
+  remediation: Check required path/query params and JSON filter body.
+  docs: https://developer.newswhip.com/docs/errors
+- status: 401
+  title: Unauthorized
+  remediation: Supply a valid `key` query parameter.
+  docs: https://developer.newswhip.com/docs/authentication
+  source: docs
+- status: 403
+  title: Forbidden
+  remediation: Your key is not entitled to this endpoint or has been disabled.
+  source: docs
+- status: 429
+  title: Too Many Requests
+  remediation: You have exceeded your rate limit; back off and retry.
+  docs: https://developer.newswhip.com/docs/rate-limits
+  source: docs
+derived_problems:
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#region
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#publisher
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#local
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#search
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#articles
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#fbposts
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#stats
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#twitterinfluencers
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#fbinfluencers
+- status: 400
+  title: Bad Request
+  description: Invalid, missing, or malformed request parameters or filter body.
+  source_operation: openapi/newswhip-openapi.yml#articlesbyhrefs

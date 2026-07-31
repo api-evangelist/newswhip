@@ -1,0 +1,20 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/newswhip-openapi.yml
+docs: https://developer.newswhip.com/docs/authentication
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+  oauth2_flows: []
+schemes:
+- name: sec0
+  type: apiKey
+  in: query
+  parameter: key
+  description: All requests are authenticated with a NewsWhip API key passed as the query parameter `key`.
+    Keys are issued by NewsWhip on request (API access is provisioned per customer); there is no OAuth
+    or self-service key generation.
+  sources:
+  - openapi/newswhip-openapi.yml

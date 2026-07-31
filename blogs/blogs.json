@@ -1,0 +1,14 @@
+{
+  "repo": "newswhip",
+  "feeds": [
+    {
+      "source": "https://developer.newswhip.com/docs/first-steps",
+      "feed_url": "https://developer.newswhip.com/docs/first-steps",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-07-25T15:00:33Z"
+}

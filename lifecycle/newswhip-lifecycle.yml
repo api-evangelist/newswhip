@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://developer.newswhip.com/changelog
+versioning:
+  scheme: uri-path
+  current: v1
+  product_version: 1.10.0
+  docs: https://developer.newswhip.com/reference
+deprecation:
+  policy: NewsWhip publishes dated deprecation and removal notices on the developer-hub changelog before
+    endpoints or categories are withdrawn.
+  docs: https://developer.newswhip.com/changelog
+  examples:
+  - kind: removal
+    subject: /trendingEntities and /igPosts endpoints
+  - kind: deprecation
+    subject: /trendingEntities endpoint
+  - kind: deprecation
+    subject: '''mayhem'' category'
+changelog: https://developer.newswhip.com/changelog
+support: https://newswhipsupport.sproutsocial.com/hc/en-us
+deprecated_operations: []

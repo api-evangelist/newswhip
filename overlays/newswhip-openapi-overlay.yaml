@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for NewsWhip API
+  version: 1.0.0
+extends: openapi/newswhip-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-rating: 3
+    x-apievangelist-source: https://developer.newswhip.com/reference
+- target: $.info
+  update:
+    x-artifacts:
+      authentication: authentication/newswhip-authentication.yml
+      errors: errors/newswhip-problem-types.yml
+      conventions: conventions/newswhip-conventions.yml
+      lifecycle: lifecycle/newswhip-lifecycle.yml

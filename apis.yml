@@ -376,6 +376,8 @@ apis:
   - type: DataModel
     url: data-model/newswhip-data-model.yml
 common:
+- type: Overlay
+  url: overlays/newswhip-openapi-overlay.yaml
 - type: Website
   url: https://newswhip.com
 - type: DeveloperPortal

@@ -1,0 +1,109 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/ + probe of https://developer.newswhip.com/mcp
+checked: '2026-08-13'
+summary: >-
+  NewsWhip has both a real MCP endpoint and a real OpenAPI surface, but they cannot be
+  bound to one another from outside. The MCP server at https://developer.newswhip.com/mcp
+  answers tools/list with HTTP 401 "Authorization required", and NewsWhip publishes no
+  tool manifest anywhere else (its /llms.txt is a documentation index, not a tool list).
+  Zero tool names are therefore known, so zero crosswalk rows exist. Mapping anything here
+  would be invention. What this file does record honestly is the full REST surface that is
+  currently unbound to any known tool, plus the exact gate that prevents the binding.
+surfaces:
+  openapi:
+    path: openapi/
+    files: 15
+    operations: 10
+    gated: false
+    note: >-
+      Fifteen refined one-per-tag OpenAPI documents covering ten distinct operations
+      against https://api.newswhip.com/v1. The API itself requires an API key (query
+      parameter `key`); an unauthenticated call returns HTTP 403.
+  graphql:
+    endpoint: null
+    gated: null
+    note: NewsWhip publishes no GraphQL surface.
+  mcp:
+    url: https://developer.newswhip.com/mcp
+    transport: streamable-http
+    gated: true
+    gate: HTTP 401, JSON-RPC error -32001 "Authorization required"
+    note: >-
+      Platform-provided (ReadMe) MCP server on NewsWhip's own developer host. See
+      mcp/newswhip-mcp.yml.
+crosswalk: []
+mcp_only: []
+rest_only:
+- operation: search
+  method: GET
+  path: /search
+  api: NewsWhip Search API
+  file: openapi/newswhip-search-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: region
+  method: GET
+  path: /region/{Region}/{Category}/{Time_Period}
+  api: NewsWhip Region API
+  file: openapi/newswhip-region-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: publisher
+  method: GET
+  path: /publisher/{Publisher}/{Time_Period}
+  api: NewsWhip Publisher API
+  file: openapi/newswhip-publisher-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: local
+  method: GET
+  path: /local/{City}/All/{Time_Period}
+  api: NewsWhip Local API
+  file: openapi/newswhip-local-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: articles
+  method: POST
+  path: /articles
+  api: NewsWhip Articles API
+  file: openapi/newswhip-articles-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: articlesbyhrefs
+  method: POST
+  path: /articlesByHrefs
+  api: NewsWhip ArticlesByHrefs API
+  file: openapi/newswhip-articlesbyhrefs-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: fbposts
+  method: POST
+  path: /fbPosts
+  api: NewsWhip FbPosts API
+  file: openapi/newswhip-fbposts-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: fbinfluencers
+  method: POST
+  path: /fbInfluencers
+  api: NewsWhip FbInfluencers API
+  file: openapi/newswhip-fbinfluencers-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: twitterinfluencers
+  method: POST
+  path: /twitterInfluencers
+  api: NewsWhip TwitterInfluencers API
+  file: openapi/newswhip-twitterinfluencers-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+- operation: stats
+  method: POST
+  path: /stats
+  api: NewsWhip Stats API
+  file: openapi/newswhip-stats-api-openapi.yml
+  reason: MCP tool list is auth-gated; no tool is known to back this operation
+coverage:
+  mcp_tools_known: 0
+  rest_operations: 10
+  mapped: 0
+  mcp_only: 0
+  rest_only: 10
+  confidence: none
+  blocker: mcp-tools-list-401
+  what_would_unblock: >-
+    Either an authenticated tools/list against https://developer.newswhip.com/mcp, or
+    NewsWhip publishing a tool manifest (or a /.well-known/oauth-protected-resource so a
+    client can obtain a token). Any of the three turns this into a real crosswalk.

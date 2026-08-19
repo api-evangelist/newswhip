@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "quick-start-api-formerly-get-api Articles Statistics API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Statistics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.newswhip.com/v1/stats",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query",
+                "description": "Your API key."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "/stats"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "quick-start-api-formerly-get-api Articles API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.newswhip.com/v1/articles",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query",
+                "description": "Your API key."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "/articles"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

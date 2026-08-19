@@ -36,3 +36,8 @@
 - [New 'Fake News' Category](https://developer.newswhip.com/changelog/new-fake-news-category.md)
 - [Deprecation notice: ‘mayhem’ category](https://developer.newswhip.com/changelog/deprecation-notice-mayhem-category.md)
 - [How we use the API to put together monthly publisher rankings](https://developer.newswhip.com/changelog/how-we-use-the-api-to-put-together-monthly-publisher-rankings.md)
+- [Version 1.10.0](https://developer.newswhip.com/changelog/version-1100.md)
+- [Version 1.9.0](https://developer.newswhip.com/changelog/version-190.md)
+- [Deprecation notice: NewsWhip Syndication features in the v1/articles API](https://developer.newswhip.com/changelog/deprecation-notice-newswhip-syndication-features-in-the-v1articles-api.md)
+- [Version 1.8.4](https://developer.newswhip.com/changelog/version-184.md)
+- [Version 1.8.3](https://developer.newswhip.com/changelog/version-183.md)

@@ -1,19 +1,36 @@
-generated: '2026-07-20'
+generated: '2026-08-13'
 method: generated
+source: openapi/ + https://developer.newswhip.com/docs
 skills:
 - file: newswhip-discover-trending-articles.md
   name: Discover trending articles by keyword
-  api: openapi/newswhip-openapi.yml
+  api: openapi/newswhip-articles-api-openapi.yml
   operations:
   - articles
 - file: newswhip-articles-by-url.md
   name: Get engagement for specific URLs
-  api: openapi/newswhip-openapi.yml
+  api: openapi/newswhip-articlesbyhrefs-api-openapi.yml
   operations:
   - articlesbyhrefs
 - file: newswhip-find-influencers.md
   name: Find top influencers driving a story
-  api: openapi/newswhip-openapi.yml
+  api: openapi/newswhip-influencers-api-openapi.yml
   operations:
   - fbinfluencers
   - twitterinfluencers
+- file: newswhip-aggregate-engagement-stats.md
+  name: Aggregate engagement statistics for a topic
+  api: openapi/newswhip-stats-api-openapi.yml
+  operations:
+  - stats
+- file: newswhip-track-publisher-and-region-rankings.md
+  name: Track publisher, region and local rankings
+  api: openapi/newswhip-rankings-api-openapi.yml
+  operations:
+  - publisher
+  - region
+  - local
+notes: >-
+  Every operationId above is grounded in a captured NewsWhip OpenAPI document. NewsWhip
+  publishes no skills or AGENTS.md of its own; these are API Evangelist generations from
+  the provider's own reference and guides.

@@ -1,0 +1,76 @@
+generated: '2026-08-13'
+method: searched
+source: https://developer.newswhip.com/llms.txt
+docs: https://developer.newswhip.com/docs
+summary: >-
+  No first-party NewsWhip client library was found in any public package registry or on the
+  NewsWhip GitHub organization. The developer hub teaches the API with raw HTTP examples
+  (cURL, browser URL, and an R tutorial) rather than an SDK. The only registry hit is a
+  third-party PHP wrapper published by an unaffiliated author.
+official_package_count: 0
+package_count: 1
+registries_searched:
+- registry: npm
+  query: newswhip
+  endpoint: https://registry.npmjs.org/-/v1/search?text=newswhip
+  results: 0
+  checked: '2026-08-13'
+- registry: npm
+  query: exact names newswhip, newswhip-api, @newswhip/api
+  endpoint: https://registry.npmjs.org/<name>
+  results: 0
+  http_status: 404
+  checked: '2026-08-13'
+- registry: pypi
+  query: exact names newswhip, newswhip-api, pynewswhip
+  endpoint: https://pypi.org/pypi/<name>/json
+  results: 0
+  http_status: 404
+  checked: '2026-08-13'
+- registry: rubygems
+  query: newswhip
+  endpoint: https://rubygems.org/api/v1/search.json?query=newswhip
+  results: 0
+  checked: '2026-08-13'
+- registry: crates.io
+  query: newswhip
+  endpoint: https://crates.io/api/v1/crates?q=newswhip
+  results: 0
+  checked: '2026-08-13'
+- registry: nuget
+  query: newswhip
+  endpoint: https://azuresearch-usnc.nuget.org/query?q=newswhip
+  results: 0
+  checked: '2026-08-13'
+- registry: packagist
+  query: newswhip
+  endpoint: https://packagist.org/search.json?q=newswhip
+  results: 1
+  checked: '2026-08-13'
+- registry: github
+  query: org:NewsWhip and newswhip in:name
+  endpoint: https://api.github.com/orgs/NewsWhip/repos
+  results: 0
+  note: >-
+    The NewsWhip GitHub organization publishes infrastructure and Scala/Akka forks
+    (swagger-akka-http, akka-http-metrics, twitter4s, kafka-manager) and an archived
+    `slate` documentation site, but no client library for the NewsWhip API.
+  checked: '2026-08-13'
+packages:
+- name: mcstutterfish/newswhip
+  registry: packagist
+  language: php
+  official: false
+  url: https://packagist.org/packages/mcstutterfish/newswhip
+  repository: https://github.com/mcstutterfish/newswhip
+  version: null
+  published: null
+  note: >-
+    Third-party, unaffiliated PHP wrapper ("NewsWhip API PHP SDK", 21 downloads). Not
+    published by NewsWhip and not referenced from the NewsWhip developer hub. Packagist's
+    search API does not return version or release date, and the package detail endpoint
+    was not resolvable at check time, so version and published are recorded as null
+    rather than guessed.
+notes: >-
+  Because no package is first-party, no `SDKs` pointer is emitted in apis.yml — the SDK
+  check asserts the provider ships a client library, and NewsWhip does not.

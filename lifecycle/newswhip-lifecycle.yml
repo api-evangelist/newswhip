@@ -1,22 +1,80 @@
-generated: '2026-07-20'
+generated: '2026-08-13'
 method: searched
 source: https://developer.newswhip.com/changelog
+checked: '2026-08-13'
 versioning:
   scheme: uri-path
   current: v1
   product_version: 1.10.0
   docs: https://developer.newswhip.com/reference
+  notes: >-
+    One long-lived major version in the path (/v1). Product releases are numbered
+    semver-ish (1.8.3 → 1.10.0) and announced on the changelog, but the URI version has
+    never moved — breaking changes are shipped inside v1 after a deprecation notice rather
+    than behind a new version.
 deprecation:
-  policy: NewsWhip publishes dated deprecation and removal notices on the developer-hub changelog before
-    endpoints or categories are withdrawn.
+  policy: >-
+    NewsWhip publishes dated deprecation and removal notices on the developer-hub changelog
+    before endpoints, response fields or category values are withdrawn, naming the affected
+    endpoints and the date the change takes effect.
   docs: https://developer.newswhip.com/changelog
+  runtime_signalling:
+    sunset_header: false
+    deprecation_header: false
+    note: >-
+      Deprecation is announced in prose on the changelog only. No RFC 8594 Sunset or
+      Deprecation response headers are documented or observed, so an integration learns
+      about a withdrawal by reading the blog, not from the API.
   examples:
   - kind: removal
     subject: /trendingEntities and /igPosts endpoints
+    detail: >-
+      Both endpoints retired to streamline the API; historical data retrieval floor moved
+      to 2018 onward as part of the same change.
+    url: https://developer.newswhip.com/changelog/removal-notice
   - kind: deprecation
     subject: /trendingEntities endpoint
+    detail: Deprecated on the Quick Start and Historical APIs, effective 31 January 2024.
+    effective: '2024-01-31'
+    url: https://developer.newswhip.com/changelog/deprecation-notice-trendingentities
   - kind: deprecation
-    subject: '''mayhem'' category'
+    subject: "'mayhem' category (ID 22) in the `categories` filter"
+    detail: >-
+      Affected /region, /articles, /stats, /trendingEntities, /twitterInfluencers,
+      /fbInfluencers and /syndicatedArticles. Queries including the category do not fail
+      but return no results.
+    url: https://developer.newswhip.com/changelog/deprecation-notice-mayhem-category
+  - kind: deprecation
+    subject: '`matched_rate` and `matched_sourceId` fields in the v1/articles response'
+    detail: >-
+      Syndication fields removed from /articles; Syndication customers directed to the
+      dedicated /syndicatedArticles endpoint. Completed in release 1.10.0.
+    url: https://developer.newswhip.com/changelog/deprecation-notice-newswhip-syndication-features-in-the-v1articles-api
 changelog: https://developer.newswhip.com/changelog
+changelog_ref: changelog/newswhip-changelog.yml
 support: https://newswhipsupport.sproutsocial.com/hc/en-us
+support_note: >-
+  The help center is hosted on Sprout Social infrastructure
+  (newswhipsupport.sproutsocial.com) following NewsWhip's acquisition by Sprout Social.
+api_contact: api@newswhip.com
+status_page:
+  published: false
+  url: null
+  evidence:
+  - url: https://newswhip.statuspage.io/
+    status: 200
+    note: >-
+      Resolves to Atlassian's Statuspage marketing page (title "Real-Time Incident
+      Communication with Statuspage | Atlassian"), not a NewsWhip status page. This is the
+      classic false positive on the <company>.statuspage.io pattern.
+  - url: https://www.newswhip.com/status/
+    status: 404
+  - url: https://developer.newswhip.com/docs/status
+    status: 404
+  note: >-
+    No status page or uptime history was found on any NewsWhip host, so no `StatusPage`
+    pointer is emitted in apis.yml.
+sla:
+  published: false
+  note: No public SLA or uptime commitment found; terms are contractual.
 deprecated_operations: []

@@ -1,68 +1,117 @@
-generated: '2026-07-20'
-method: derived
-source: openapi/newswhip-openapi.yml
+generated: '2026-08-13'
+method: searched
+source: https://developer.newswhip.com/docs/errors
 docs: https://developer.newswhip.com/docs/errors
+checked: '2026-08-13'
 format: custom-json
-notes: Errors are returned as JSON with an HTTP status code. The OpenAPI declares 400 for each operation;
-  the docs errors reference additionally documents authentication (invalid/missing key) and rate-limit
-  responses. Not RFC 9457 application/problem+json.
+envelope: '{"error":{"message":"<human readable>","id":"<uuid>"}}'
+envelope_source:
+  url: https://api.newswhip.com/v1/search?q=test
+  status: 403
+  observed: '2026-08-13'
+  note: >-
+    Envelope shape observed directly on a live unauthenticated request; the body was
+    {"error":{"message":"No API key was passed with this request.","id":"<uuid>"}}.
+    The `id` is a per-request UUID useful when contacting support.
+notes: >-
+  Errors are plain JSON with an HTTP status code — not RFC 9457 application/problem+json,
+  and with no machine-readable error code of their own. The published error reference
+  documents five statuses; the OpenAPI declares only 400 per operation, so the catalog
+  below is broader than the spec. Note one real discrepancy: the docs assign missing or
+  invalid keys to 403, and the live API confirms it returns 403 (not 401) when no key is
+  passed. Clients written against the older 401 assumption will mis-handle auth failures.
 problems:
 - status: 400
   title: Bad Request
-  remediation: Check required path/query params and JSON filter body.
+  description: >-
+    Your request could not be parsed. The text of the response describes the reason the
+    request could not be parsed.
+  remediation: >-
+    Check required path and query parameters, and validate the JSON filter body. Escape
+    reserved Lucene characters (notably `"`) inside filter strings.
   docs: https://developer.newswhip.com/docs/errors
-- status: 401
-  title: Unauthorized
-  remediation: Supply a valid `key` query parameter.
-  docs: https://developer.newswhip.com/docs/authentication
   source: docs
 - status: 403
   title: Forbidden
-  remediation: Your key is not entitled to this endpoint or has been disabled.
-  source: docs
+  description: >-
+    Your API key is not allowed to access this resource, or your API key is expired or
+    invalid. Also returned when no key is passed at all.
+  remediation: >-
+    Supply a valid `key` query parameter. Confirm the key is entitled to the product tier
+    the endpoint belongs to (Quick Start / Historical / Syndication).
+  docs: https://developer.newswhip.com/docs/authentication
+  source: docs+probe
+  observed_message: No API key was passed with this request.
 - status: 429
   title: Too Many Requests
-  remediation: You have exceeded your rate limit; back off and retry.
+  description: 'Enhance your calm! or contact us for higher limits!'
+  remediation: >-
+    Back off. The limit is 100 requests per rolling 5 minutes with a 5 requests/second
+    ceiling. Collapse near-identical consecutive queries into one using Lucene `OR`
+    operators, or contact NewsWhip for higher limits.
   docs: https://developer.newswhip.com/docs/rate-limits
+  ref: rate-limits/newswhip-rate-limits.yml
   source: docs
+- status: 500
+  title: Internal Server Error
+  description: NewsWhip had a problem with its server.
+  remediation: Retry later with backoff.
+  docs: https://developer.newswhip.com/docs/errors
+  source: docs
+- status: 503
+  title: Service Unavailable
+  description: Temporarily offline for maintenance.
+  remediation: Retry later with backoff.
+  docs: https://developer.newswhip.com/docs/errors
+  source: docs
+retry_guidance:
+  retryable:
+  - 429
+  - 500
+  - 503
+  not_retryable:
+  - 400
+  - 403
+  retry_after_header: false
+  note: >-
+    No Retry-After header is documented or observed, so clients must implement their own
+    backoff. Retries are safe on every endpoint — the whole API is read-only, including
+    the POST query endpoints. See conventions/newswhip-conventions.yml.
 derived_problems:
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#region
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#publisher
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#local
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#search
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#articles
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#fbposts
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#stats
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#twitterinfluencers
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#fbinfluencers
-- status: 400
-  title: Bad Request
-  description: Invalid, missing, or malformed request parameters or filter body.
-  source_operation: openapi/newswhip-openapi.yml#articlesbyhrefs
+  method: derived
+  source: openapi/
+  note: >-
+    Every captured operation declares a 400 response and nothing else; the 403/429/500/503
+    statuses above come from the docs and from live probing, not from the spec. This is
+    itself the finding — the OpenAPI under-documents the error surface.
+  operations:
+  - operation: search
+    statuses:
+    - 400
+  - operation: region
+    statuses:
+    - 400
+  - operation: publisher
+    statuses:
+    - 400
+  - operation: local
+    statuses:
+    - 400
+  - operation: articles
+    statuses:
+    - 400
+  - operation: articlesbyhrefs
+    statuses:
+    - 400
+  - operation: fbposts
+    statuses:
+    - 400
+  - operation: fbinfluencers
+    statuses:
+    - 400
+  - operation: twitterinfluencers
+    statuses:
+    - 400
+  - operation: stats
+    statuses:
+    - 400

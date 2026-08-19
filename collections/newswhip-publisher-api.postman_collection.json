@@ -1,0 +1,219 @@
+{
+  "item": [
+    {
+      "id": "5d1d223e-29af-4468-9b0c-6873fa4d5029",
+      "name": "Publisher",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d2803daf-9893-4000-9d4d-94fdb478e19c",
+          "name": "/publisher",
+          "request": {
+            "name": "/publisher",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "publisher",
+                ":Publisher",
+                ":Time_Period"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "150",
+                  "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "nytimes.com",
+                  "key": "Publisher",
+                  "description": "(Required) Any domain or subdomain. i.e. nytimes.com, blog.newswhip.com"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "24",
+                  "key": "Time_Period",
+                  "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1cbf20f-8f87-4107-9a6d-b819a7e5651a",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "publisher",
+                    ":Publisher",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "nytimes.com",
+                      "key": "Publisher",
+                      "description": "(Required) Any domain or subdomain. i.e. nytimes.com, blog.newswhip.com"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\": 702,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 211,\\n      \\\"recent_fb_counts\\\": 3760,\\n      \\\"recent_tw_counts\\\": 188,\\n      \\\"videos\\\": [],\\n      \\\"relatedStories\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 48195,\\n        \\\"total_count_delta\\\": 3760,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 2.884757949529689\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 7431,\\n        \\\"total_count_delta\\\": 188,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"tw_overperforming\\\": 4.646973523569058\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 1,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 74438,\\n      \\\"predicted_timestamp\\\": 1522571075969,\\n      \\\"uuid\\\": \\\"3a4c6b20-3443-11e8-ab88-49c2dc76b82d\\\",\\n      \\\"publication_timestamp\\\": 1522432393000,\\n      \\\"link\\\": \\\"https://www.nytimes.com/2018/03/30/us/stephon-clark-independent-autopsy.html\\\",\\n      \\\"headline\\\": \\\"Stephon Clark Was Shot 8 Times Primarily in His Back, Family-Ordered Autopsy Finds\\\",\\n      \\\"excerpt\\\": \\\"A lawyer for the family said the findings proved that Mr. Clark could not have been moving in a threatening fashion toward Sacramento officers when they opened fire.\\\",\\n      \\\"keywords\\\": \\\"Stephon Clark,Police Brutality;Police Misconduct;Police Shootings\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"nytimes.com\\\",\\n        \\\"domain\\\": \\\"nytimes.com\\\",\\n        \\\"link\\\": \\\"https://nytimes.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"\\n      },\\n      \\\"image_link\\\": \\\"https://static01.nyt.com/images/2018/03/22/autossell/sacramento-schooting2/sacramento-schooting2-facebookJumbo-v2.jpg\\\",\\n      \\\"has_video\\\": true,\\n      \\\"nw_score\\\": 280.85125702122036,\\n      \\\"max_nw_score\\\": 3212.7672437775227,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 2,\\n          \\\"name\\\": \\\"News\\\"\\n        },\\n        {\\n          \\\"id\\\": 668,\\n          \\\"name\\\": \\\"Events\\\"\\n        }\\n      ],\\n      \\\"authors\\\": [\\n        \\\"FRANCES ROBLES\\\"\\n      ],\\n      \\\"entities\\\": [\\n        \\\"Sacramento\\\",\\n        \\\"Mr Clark\\\"\\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2d917f84-3376-4454-87bf-9e4488d82e26",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "publisher",
+                    ":Publisher",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "nytimes.com",
+                      "key": "Publisher",
+                      "description": "(Required) Any domain or subdomain. i.e. nytimes.com, blog.newswhip.com"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Bad Request</title>\n        <link rel=\"shortcut icon\" href=\"data:image/png;\">\n        <style>\n            html, body, pre {\n                margin: 0;\n                padding: 0;\n                font-family: Monaco, 'Lucida Console', monospace;\n                background: #ECECEC;\n            }\n            h1 {\n                margin: 0;\n                background: #AD632A;\n                padding: 20px 45px;\n                color: #fff;\n                text-shadow: 1px 1px 1px rgba(0,0,0,.3);\n                border-bottom: 1px solid #9F5805;\n                font-size: 28px;\n            }\n            p#detail {\n                margin: 0;\n                padding: 15px 45px;\n                background: #F6A960;\n                border-top: 4px solid #D29052;\n                color: #733512;\n                text-shadow: 1px 1px 1px rgba(255,255,255,.3);\n                font-size: 14px;\n                border-bottom: 1px solid #BA7F5B;\n            }\n        </style>\n    </head>\n    <body>\n        <h1>Bad Request</h1>\n\n        <p id=\"detail\">\n            For request 'GET /api/v1/publisher/your_pubisher/your_time_period?key=DevHub' [Cannot parse parameter time as Int: For input string: &quot;null&quot;]\n        </p>\n\n    </body>\n</html>",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f004a692-f9c4-47a9-9142-79f36072117e",
+    "name": "quick-start-api-formerly-get-api Articles Publisher API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

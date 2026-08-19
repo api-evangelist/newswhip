@@ -1,0 +1,484 @@
+{
+  "item": [
+    {
+      "id": "6a09e1db-51b3-4169-84fa-550dd800add1",
+      "name": "Content",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "848e2ebd-c4f1-4bc9-a368-027f629dad81",
+          "name": "/search",
+          "request": {
+            "name": "/search",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "happiness",
+                  "description": "(Required) The keywords or phrase that you'd like to search for"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "150",
+                  "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3337d4dd-5848-4514-a0a6-b437a9f30869",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "happiness"
+                    },
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\":620,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 263,\\n      \\\"recent_fb_counts\\\": 48,\\n      \\\"recent_tw_counts\\\": 5,\\n      \\\"relatedStories\\\": [\\n        {\\n          \\\"delta_time\\\": 189,\\n          \\\"recent_fb_counts\\\": 157,\\n          \\\"recent_tw_counts\\\": 0,\\n          \\\"relatedStories\\\": [],\\n          \\\"fb_data\\\": {\\n            \\\"total_engagement_count\\\": 351,\\n            \\\"total_count_delta\\\": 157,\\n            \\\"delta_period\\\": 189,\\n            \\\"delta_period_unit\\\": \\\"m\\\"\\n          },\\n          \\\"tw_data\\\": {\\n            \\\"tw_count\\\": 0,\\n            \\\"total_count_delta\\\": 0,\\n            \\\"delta_period\\\": 189,\\n            \\\"delta_period_unit\\\": \\\"m\\\"\\n          },\\n          \\\"li_data\\\": {\\n            \\\"li_count\\\": 0,\\n            \\\"total_count_delta\\\": 0,\\n            \\\"delta_period\\\": 189,\\n            \\\"delta_period_unit\\\": \\\"m\\\"\\n          },\\n          \\\"pi_data\\\": {\\n            \\\"pi_count\\\": 0,\\n            \\\"delta_period\\\": 189,\\n            \\\"delta_period_unit\\\": \\\"m\\\"\\n          },\\n          \\\"predicted_interactions\\\": 1162,\\n          \\\"predicted_timestamp\\\": 1522560805758,\\n          \\\"uuid\\\": \\\"fd7f0100-34a4-11e8-a52e-a128b18e226e\\\",\\n          \\\"publication_timestamp\\\": 1522474219000,\\n          \\\"link\\\": \\\"http://www.abc.net.au/triplej/news/musicnews/lana-del-rey-shares-sneak-peak-of-new-music-while-in-australia/9606794\\\",\\n          \\\"headline\\\": \\\"Lana Del Rey previews new song 'Happiness Is A Butterfly' while in Australia\\\",\\n          \\\"excerpt\\\": \\\"\\\\\\\"Sing it for my babies on the tourlyfe\\\\\\\"\\\",\\n          \\\"keywords\\\": \\\"lana del rey, preview, australia\\\",\\n          \\\"source\\\": {\\n            \\\"publisher\\\": \\\"abc.net.au\\\",\\n            \\\"domain\\\": \\\"abc.net.au\\\",\\n            \\\"link\\\": \\\"http://abc.net.au\\\",\\n            \\\"country\\\": \\\"Australia\\\",\\n            \\\"country_code\\\": \\\"au\\\",\\n            \\\"language\\\": \\\"en\\\"\\n          },\\n          \\\"image_link\\\": \\\"http://www.abc.net.au/cm/rimage/9335302-16x9-large.jpg?v=2\\\",\\n          \\\"has_video\\\": false,\\n          \\\"nw_score\\\": 52.11315038623968,\\n          \\\"max_nw_score\\\": 249.86289135221006,\\n          \\\"topics\\\": [],\\n          \\\"authors\\\": null,\\n          \\\"entities\\\": []\\n        }\\n    ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "19d1cde6-2187-490c-adc0-2adf4ae2808d",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "happiness"
+                    },
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"query can't be empty\\\",\\n    \\\"id\\\": \\\"65773da0-5e3c-4a68-bb58-eaf4ccc99a26\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3f9004e-7fc7-41ff-bb25-b7d55ce02461",
+          "name": "/articles",
+          "request": {
+            "name": "/articles",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"en\",\n  \"sort_by\": \"default\",\n  \"video_only\": false,\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 5,\n  \"find_related\": true,\n  \"content_type\": \"<string>\",\n  \"search_full_text\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9b91ec54-4c12-446c-8842-f701ebe8d224",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"en\",\n  \"sort_by\": \"default\",\n  \"video_only\": false,\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 5,\n  \"find_related\": true,\n  \"content_type\": \"<string>\",\n  \"search_full_text\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\":15602,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 548,\\n      \\\"recent_fb_counts\\\": 54761,\\n      \\\"recent_tw_counts\\\": 0,\\n      \\\"relatedStories\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 1096120,\\n        \\\"total_count_delta\\\": 54761,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 26.570010165941973\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 2,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 1281202,\\n      \\\"predicted_timestamp\\\": 1522319800242,\\n      \\\"uuid\\\": \\\"3c75f3a0-309a-11e8-a52e-a128b18e226e\\\",\\n      \\\"publication_timestamp\\\": 1521989222000,\\n      \\\"link\\\": \\\"https://viralhatch.com/index.php/2018/03/25/90-have-no-idea-what-this-is-do-you-share-if-you-do/\\\",\\n      \\\"headline\\\": \\\"90% Have No Idea What This Is. Do You? SHARE if you do..\\\",\\n      \\\"excerpt\\\": \\\"Have you ever seen one of these?\\\",\\n      \\\"keywords\\\": \\\"\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"viralhatch.com\\\",\\n        \\\"domain\\\": \\\"viralhatch.com\\\",\\n        \\\"link\\\": \\\"https://viralhatch.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"        \\n      },\\n      \\\"image_link\\\": \\\"https://viralhatch.com/wp-content/uploads/2018/03/ghght.jpg\\\",\\n      \\\"has_video\\\": false,\\n      \\\"nw_score\\\": 532.8919847752009,\\n      \\\"max_nw_score\\\": 5263.7731261133695,\\n      \\\"topics\\\": [],\\n      \\\"authors\\\": null,\\n      \\\"entities\\\": []\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c76e046d-016d-4c42-91b0-e4daa900e4cf",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"en\",\n  \"sort_by\": \"default\",\n  \"video_only\": false,\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 5,\n  \"find_related\": true,\n  \"content_type\": \"<string>\",\n  \"search_full_text\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Fields 'foo' is not allowed for filters query!\\\",\\n    \\\"id\\\": \\\"6958f453-0acd-4c59-9f68-d82b42daa9f3\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4554c7a8-9c62-400d-b492-c6d6b8dd67ad",
+          "name": "/articlesByHrefs",
+          "request": {
+            "name": "/articlesByHrefs",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articlesByHrefs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevKey",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hrefs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "51bd1adc-c9ac-4ff8-aa17-61c26a245aa8",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articlesByHrefs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hrefs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"[\\n    {\\n        \\\"href\\\": \\\"https://www.theanimalclub.net/dogs/senior-dog-is-so-happy-that-family-remembered-his-13th-birthday/\\\",\\n        \\\"articles\\\": [\\n            {\\n                \\\"delta_time\\\": 8880,\\n                \\\"recent_fb_counts\\\": 4,\\n                \\\"recent_tw_counts\\\": 0,\\n                \\\"relatedStories\\\": [],\\n                \\\"fb_data\\\": {\\n                    \\\"total_engagement_count\\\": 4341,\\n                    \\\"likes\\\": 3740,\\n                    \\\"comments\\\": 244,\\n                    \\\"shares\\\": 357,\\n                    \\\"total_count_delta\\\": 4,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"tw_data\\\": {\\n                    \\\"tw_count\\\": 0,\\n                    \\\"total_count_delta\\\": 0,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"li_data\\\": {\\n                    \\\"li_count\\\": 0,\\n                    \\\"total_count_delta\\\": 0,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"pi_data\\\": {\\n                    \\\"pi_count\\\": 0,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"predicted_interactions\\\": 4341.0,\\n                \\\"predicted_timestamp\\\": 1584842548933,\\n                \\\"uuid\\\": \\\"12f51c50-531a-11ea-b13e-cf0e7a652529\\\",\\n                \\\"publication_timestamp\\\": 1582102250000,\\n                \\\"link\\\": \\\"https://www.theanimalclub.net/dogs/senior-dog-is-so-happy-that-family-remembered-his-13th-birthday/\\\",\\n                \\\"headline\\\": \\\"Senior dog is so happy that people remembered his 13th birthday\\\",\\n                \\\"excerpt\\\": \\\"Such a good doggo.\\\",\\n                \\\"keywords\\\": \\\"\\\",\\n                \\\"source\\\": {\\n                    \\\"publisher\\\": \\\"theanimalclub.net\\\",\\n                    \\\"domain\\\": \\\"theanimalclub.net\\\",\\n                    \\\"link\\\": \\\"https://theanimalclub.net\\\",\\n                    \\\"country\\\": \\\"\\\",\\n                    \\\"country_code\\\": \\\"\\\",\\n                    \\\"language\\\": \\\"en\\\"\\n                },\\n                \\\"image_link\\\": \\\"https://www.theanimalclub.net/wp-content/uploads/sites/3/2020/02/Ba.jpg\\\",\\n                \\\"has_video\\\": false,\\n                \\\"nw_score\\\": 0.00865636383437796,\\n                \\\"max_nw_score\\\": 873.6694656721905,\\n                \\\"topics\\\": [],\\n                \\\"authors\\\": [\\n                    \\\"The Animal Club\\\"\\n                ],\\n                \\\"entities\\\": []\\n            }\\n        ]\\n    }\\n]\\n\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "52b941ef-e84e-460a-8f6c-48ef4bc48b18",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articlesByHrefs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hrefs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"error\\\": {\\n        \\\"message\\\": \\\"Number of HREFs exceeds max limit of 5\\\",\\n        \\\"id\\\": \\\"50140de9-59d3-465a-9da7-499decdff98a\\\"\\n    }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "21230882-5cab-4ca0-bbe7-90f3cc28db6a",
+    "name": "quick-start-api-formerly-get-api Articles Content API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,23 +1,102 @@
-generated: '2026-07-20'
+generated: '2026-08-13'
 method: derived
-source: openapi/newswhip-openapi.yml
+source: openapi/ + https://developer.newswhip.com/docs
+checked: '2026-08-13'
+notes: >-
+  Cross-cutting standards assertions for the NewsWhip API. NewsWhip publishes no
+  compliance or certification program of its own — no trust center, no SOC 2 / ISO 27001 /
+  PCI / HIPAA / FedRAMP claim was found on any NewsWhip host — so no `Compliance` pointer
+  is emitted in apis.yml. This file records technical conformance only.
 standards:
 - id: openapi-3.1
   conforms: true
-  evidence: spec captured as OpenAPI 3.1.0
+  evidence: >-
+    Spec captured as OpenAPI 3.1.0 and refined into 15 one-per-tag documents under
+    openapi/.
 - id: apikey-auth
   conforms: true
-  evidence: securityScheme type apiKey in query 'key'
+  evidence: securityScheme type apiKey, in query, parameter `key`
+- id: apikey-in-header
+  conforms: false
+  evidence: >-
+    The key is only accepted as a query-string parameter. There is no header-based
+    alternative, so the credential appears in URLs and therefore in intermediary logs.
 - id: oauth2
   conforms: false
+  evidence: no OAuth flows in the spec and none documented
 - id: oidc
   conforms: false
+  evidence: no /.well-known/openid-configuration on any host (404 on all four)
 - id: rfc9457-problem-details
   conforms: false
-  evidence: errors are plain JSON, not application/problem+json
+  evidence: >-
+    Errors are plain JSON in a custom `{"error":{"message","id"}}` envelope, not
+    application/problem+json. Observed live on a 403 from api.newswhip.com.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: >-
+    Deprecations are announced as dated changelog posts on the developer hub, not
+    signalled at runtime with Sunset or Deprecation headers.
+- id: rfc9111-http-caching
+  conforms: partial
+  evidence: >-
+    Quick Start API responses are cached server-side per API key for approximately three
+    minutes and NewsWhip directs clients to read the exact value from response headers;
+    Historical and Syndication responses are never cached.
+- id: rate-limit-headers
+  conforms: false
+  evidence: >-
+    Limits are published in the docs (100 per rolling 5 minutes, 5 per second) but no
+    X-RateLimit-*, RateLimit-* or Retry-After header is documented, and none was observed
+    on a live response.
+- id: idempotency
+  conforms: not-applicable
+  evidence: >-
+    Read-only API. No idempotency key mechanism, and none needed — the POST endpoints are
+    queries, not writes.
+- id: pagination
+  conforms: partial
+  evidence: >-
+    Size-limited results only (`size`, capped at 500 or 5,000 by product tier). No cursor,
+    page token or Link header; deep retrieval is done by narrowing time ranges.
 - id: cors
-  conforms: true
-  evidence: CORS documented at developer.newswhip.com/docs/cross-origin-resource-sharing-cors
+  conforms: partial
+  evidence: >-
+    Quick Start API supports one configured cross-origin origin per API key, set up by
+    NewsWhip on request; Historical and Syndication endpoints are server-side only.
 - id: rest-json
   conforms: true
-  evidence: JSON request/response over HTTPS
+  evidence: JSON request and response bodies over HTTPS
+- id: https-only
+  conforms: true
+  evidence: >-
+    api.newswhip.com serves HSTS max-age=15724800 with includeSubDomains, plus
+    x-content-type-options, referrer-policy and a frame-ancestors CSP.
+- id: mcp
+  conforms: partial
+  evidence: >-
+    A live MCP endpoint is served at https://developer.newswhip.com/mcp, but tools/list
+    returns 401 with no WWW-Authenticate challenge and no OAuth well-known documents, so
+    an MCP client cannot discover how to authenticate. See mcp/newswhip-mcp.yml.
+- id: a2a
+  conforms: false
+  evidence: >-
+    No agent card at /.well-known/agent-card.json or /.well-known/agent.json on any of the
+    four NewsWhip hosts (all 404 or 301).
+- id: asyncapi
+  conforms: not-applicable
+  evidence: >-
+    NewsWhip publishes no event, streaming or webhook surface — the API is request/response
+    polling only. Nothing to describe with AsyncAPI.
+- id: security-txt
+  conforms: false
+  evidence: no /.well-known/security.txt on any host (see well-known/newswhip-well-known.yml)
+compliance_programs:
+  published: false
+  certifications: []
+  trust_center: null
+  evidence: >-
+    Probed www.newswhip.com/security/ (404), /newswhip-security-and-compliance/ (404),
+    trust.newswhip.com (does not resolve). www.newswhip.com/trust/ returns 200 but is a
+    blog post about the Edelman Trust Barometer, not a trust center. A GDPR page exists at
+    www.newswhip.com/gdpr/ (200) but names no certification.

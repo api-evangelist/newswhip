@@ -1,43 +1,116 @@
-generated: '2026-07-20'
+generated: '2026-08-13'
 method: searched
 source: https://developer.newswhip.com/docs
+checked: '2026-08-13'
 authentication:
   style: api-key
   location: query
   parameter: key
   docs: https://developer.newswhip.com/docs/authentication
   ref: authentication/newswhip-authentication.yml
+  notes: >-
+    Every GET and POST carries the key as a query string, e.g.
+    `GET /v1/region/U.S./Politics/24?key=YOUR_API_KEY`. The docs explicitly warn the key
+    is to be treated as a password — which a query-string credential makes harder, since
+    it lands in proxy and server logs. There is no header alternative and no OAuth.
 idempotency:
   supported: false
-  notes: No idempotency-key mechanism documented; GET endpoints are naturally idempotent, POST search/query
-    endpoints are read-only queries expressed as POST bodies.
+  header: null
+  scope: null
+  retention: null
+  notes: >-
+    No idempotency-key mechanism is documented. It is not a gap with consequences here:
+    the API is read-only. GET endpoints are naturally idempotent, and the POST endpoints
+    (/articles, /fbPosts, /stats, /fbInfluencers, /twitterInfluencers, /articlesByHrefs)
+    are queries expressed as POST bodies rather than writes, so a retried request creates
+    nothing and duplicates nothing.
 pagination:
   style: size-limited
   params:
   - size
-  notes: Result volume is controlled with the `size` query parameter (and per-endpoint result-size limits);
-    large historical pulls page via time ranges / from-to filters in the request body.
+  response_fields: []
+  cursor: false
+  notes: >-
+    There is no cursor or page-token pagination. Result volume is bounded with `size`,
+    against a hard per-product ceiling — 500 records per query on the Quick Start API,
+    5,000 on the Historical and Syndication APIs. Larger pulls are walked by narrowing the
+    time range (`from`/`to` in the request body) rather than by paging.
+  limits:
+    quick_start_max: 500
+    historical_max: 5000
+    syndication_max: 5000
   docs: https://developer.newswhip.com/docs/result-size-limits
+defaults:
+  documented: true
+  docs: https://developer.newswhip.com/docs/query-defaults
+  notes: >-
+    Optional fields may be omitted on Historical API queries; each endpoint documents its
+    own default in the API reference.
 query_language:
   style: lucene
   docs: https://developer.newswhip.com/docs/lucene-query-strings
-  notes: Filter bodies accept Lucene query strings for keyword/entity matching.
+  notes: >-
+    Filter bodies accept Lucene query strings for keyword and entity matching. NewsWhip
+    recommends collapsing several near-identical queries into one with `OR` operators as
+    the primary rate-limit mitigation.
+  tips: https://developer.newswhip.com/docs/filtering-tips
 time_ranges:
   docs: https://developer.newswhip.com/docs/time-ranges
   timezones: https://developer.newswhip.com/docs/timezones
+  format: epoch milliseconds in `from` / `to` request-body fields
+  historical_floor: '2018'
+  historical_floor_note: >-
+    Data retrieval runs from 2018 onward following the removal of /trendingEntities and
+    /igPosts; the marketing surface still describes tracking since 2014.
 caching:
   server_side: true
   docs: https://developer.newswhip.com/docs/server-side-caching
+  quick_start: cached per API key for approximately 3 minutes
+  historical: never cached
+  syndication: never cached
+  notes: >-
+    NewsWhip advises reading the exact value from the HTTP response headers rather than
+    assuming three minutes.
 cors:
-  supported: true
+  supported: partial
   docs: https://developer.newswhip.com/docs/cross-origin-resource-sharing-cors
+  quick_start: one allowed cross-origin origin per API key, configured by NewsWhip on request
+  historical: server-side only
+  syndication: server-side only
+  contact: api@newswhip.com
+request_id:
+  supported: true
+  location: response body
+  field: error.id
+  notes: >-
+    Error responses carry a per-request UUID at `error.id`. Observed on a live probe of
+    GET https://api.newswhip.com/v1/search?q=test (HTTP 403):
+    {"error":{"message":"No API key was passed with this request.","id":"<uuid>"}}.
+    There is no X-Request-Id response header, so the identifier is only available when a
+    request fails.
 rate_limits:
   documented: true
   docs: https://developer.newswhip.com/docs/rate-limits
-  notes: Per-key rate limits apply; see docs. Exact numeric limits are provisioned per contract and not
-    published.
+  ref: rate-limits/newswhip-rate-limits.yml
+  limit: 100 requests per rolling 5 minutes, max 5 requests per second
+  headers: none documented and none observed
 error_envelope:
   format: json
+  shape: '{"error":{"message":"<human readable>","id":"<uuid>"}}'
+  problem_json: false
   ref: errors/newswhip-problem-types.yml
   docs: https://developer.newswhip.com/docs/errors
+  notes: >-
+    Not RFC 9457. There is no machine-readable error code — only an HTTP status and an
+    English sentence — so clients must branch on status alone.
+security_headers:
+  observed_on: https://api.newswhip.com/v1/search
+  headers:
+  - strict-transport-security: max-age=15724800; includeSubDomains
+  - x-content-type-options: nosniff
+  - referrer-policy: strict-origin-when-cross-origin
+  - x-permitted-cross-domain-policies: none
+  - content-security-policy: frame-ancestors 'none';
+  ref: security/newswhip-domain-security.yml
 versioning_ref: lifecycle/newswhip-lifecycle.yml
+plans_ref: plans/newswhip-plans-pricing.yml

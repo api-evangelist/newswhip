@@ -1,0 +1,222 @@
+{
+  "item": [
+    {
+      "id": "0496b912-d2ed-4b20-87f9-720d91f65b82",
+      "name": "Local",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "32219d0f-262f-4e81-b39f-21b35f8443a8",
+          "name": "/local",
+          "request": {
+            "name": "/local",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "local",
+                ":City",
+                "All",
+                ":Time_Period"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "150",
+                  "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "Seattle, WA",
+                  "key": "City",
+                  "description": "(Required) Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "24",
+                  "key": "Time_Period",
+                  "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ee7ace99-8f9e-469d-9e2b-f505fdd3b846",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "local",
+                    ":City",
+                    "All",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "Seattle, WA",
+                      "key": "City",
+                      "description": "(Required) Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{ \\n  \\\"total_match\\\":620,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 249,\\n      \\\"recent_fb_counts\\\": 41,\\n      \\\"recent_tw_counts\\\": 1,\\n      \\\"videos\\\": [\\n        \\\"http://www.youtube.com/watch?v=2vk8T35bbQc\\\",\\n        \\\"http://www.youtube.com/watch?v=28G9VLQezVg\\\",\\n        \\\"http://www.youtube.com/watch?v=c02O4Wvo7QI\\\",\\n        \\\"http://www.youtube.com/watch?v=TuuumQ4hcDg\\\",\\n        \\\"http://www.youtube.com/watch?v=nnFZKnlQlDw\\\"\\n      ],\\n      \\\"relatedStories\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 2422,\\n        \\\"total_count_delta\\\": 41,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 7,\\n        \\\"total_count_delta\\\": 1,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 1,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 2638,\\n      \\\"predicted_timestamp\\\": 1522561756839,\\n      \\\"uuid\\\": \\\"184c2eb0-343f-11e8-9e4c-83fcdd16cc63\\\",\\n      \\\"publication_timestamp\\\": 1522430612000,\\n      \\\"link\\\": \\\"http://bipartisanreport.com/2018/03/30/breaking-fbi-detains-trump-ally-at-airport-donald-feeling-robert-mueller-heat/\\\",\\n      \\\"headline\\\": \\\"BREAKING: FBI Detains Trump Ally At Airport - Donald Feeling Robert Mueller Heat\\\",\\n      \\\"excerpt\\\": \\\"The Russia investigation is continuing to proceed, whether the president and his allies are fond of the idea or not. Although the House Intelligence Committee moved to end its investigation, other lines of inquiry are still very much open. Special Counsel Robert Mueller, for instance, has proven that he will leave no stone unturned in … Continued\\\",\\n      \\\"keywords\\\": \\\"\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"bipartisanreport.com\\\",\\n        \\\"domain\\\": \\\"bipartisanreport.com\\\",\\n        \\\"link\\\": \\\"http://bipartisanreport.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"\\n      },\\n      \\\"image_link\\\": \\\"http://cdn.bipartisanreport.com/wordpress/wp-content/uploads/2018/03/935503612.jpg\\\",\\n      \\\"has_video\\\": true,\\n      \\\"nw_score\\\": 6.6169187100695535,\\n      \\\"max_nw_score\\\": 1029.80745168683,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 2,\\n          \\\"name\\\": \\\"News\\\"\\n        },\\n        {\\n          \\\"id\\\": 20,\\n          \\\"name\\\": \\\"Politics\\\"\\n        }\\n      ],\\n      \\\"authors\\\": [\\n        \\\"Caleb Newton\\\"\\n      ],\\n      \\\"entities\\\": [\\n        \\\"Russia\\\",\\n        \\\"House Intelligence Committee\\\",\\n        \\\"Robert Mueller\\\"\\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c923dc2-5d79-49fd-b6bb-63d39805a233",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "local",
+                    ":City",
+                    "All",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "Seattle, WA",
+                      "key": "City",
+                      "description": "(Required) Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"time parameter is invalid. Received: 9999999\\\",\\n    \\\"id\\\": \\\"7554ca00-30ab-4ba0-a472-4e533e76e59a\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e77928ab-4a42-443f-98bf-702c61ab36bf",
+    "name": "quick-start-api-formerly-get-api Articles Local API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

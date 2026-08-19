@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "de8541c7-4799-4b8c-bd4d-1dbc9c09a3e0",
+      "name": "Articles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b74e6689-1235-4c23-a8bb-f61e89522136",
+          "name": "/articles",
+          "request": {
+            "name": "/articles",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"en\",\n  \"sort_by\": \"default\",\n  \"video_only\": false,\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 5,\n  \"find_related\": true,\n  \"content_type\": \"<string>\",\n  \"search_full_text\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e1851eac-9c42-4c1d-be52-6429b260ae8e",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"en\",\n  \"sort_by\": \"default\",\n  \"video_only\": false,\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 5,\n  \"find_related\": true,\n  \"content_type\": \"<string>\",\n  \"search_full_text\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\":15602,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 548,\\n      \\\"recent_fb_counts\\\": 54761,\\n      \\\"recent_tw_counts\\\": 0,\\n      \\\"relatedStories\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 1096120,\\n        \\\"total_count_delta\\\": 54761,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 26.570010165941973\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 2,\\n        \\\"delta_period\\\": 548,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 1281202,\\n      \\\"predicted_timestamp\\\": 1522319800242,\\n      \\\"uuid\\\": \\\"3c75f3a0-309a-11e8-a52e-a128b18e226e\\\",\\n      \\\"publication_timestamp\\\": 1521989222000,\\n      \\\"link\\\": \\\"https://viralhatch.com/index.php/2018/03/25/90-have-no-idea-what-this-is-do-you-share-if-you-do/\\\",\\n      \\\"headline\\\": \\\"90% Have No Idea What This Is. Do You? SHARE if you do..\\\",\\n      \\\"excerpt\\\": \\\"Have you ever seen one of these?\\\",\\n      \\\"keywords\\\": \\\"\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"viralhatch.com\\\",\\n        \\\"domain\\\": \\\"viralhatch.com\\\",\\n        \\\"link\\\": \\\"https://viralhatch.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"        \\n      },\\n      \\\"image_link\\\": \\\"https://viralhatch.com/wp-content/uploads/2018/03/ghght.jpg\\\",\\n      \\\"has_video\\\": false,\\n      \\\"nw_score\\\": 532.8919847752009,\\n      \\\"max_nw_score\\\": 5263.7731261133695,\\n      \\\"topics\\\": [],\\n      \\\"authors\\\": null,\\n      \\\"entities\\\": []\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae80f06b-2ccb-4d11-8315-dcb91c4f9703",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"en\",\n  \"sort_by\": \"default\",\n  \"video_only\": false,\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 5,\n  \"find_related\": true,\n  \"content_type\": \"<string>\",\n  \"search_full_text\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Fields 'foo' is not allowed for filters query!\\\",\\n    \\\"id\\\": \\\"6958f453-0acd-4c59-9f68-d82b42daa9f3\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "83b4f0f0-bcde-49df-b986-912d5a8dc65b",
+    "name": "quick-start-api-formerly-get-api Articles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

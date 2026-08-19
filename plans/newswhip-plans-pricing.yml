@@ -1,0 +1,96 @@
+generated: '2026-08-13'
+method: searched
+source: https://developer.newswhip.com/docs/api-features
+docs: https://developer.newswhip.com/docs/api-features
+checked: '2026-08-13'
+pricing_published: false
+plan_count: 3
+currency: null
+summary: >-
+  NewsWhip publishes NO prices. There is no /pricing page on newswhip.com (probed, 404);
+  every commercial path on the site is "Request a demo" and API keys are issued through an
+  access-request form. What NewsWhip does publish is a three-tier API product structure —
+  Quick Start, Historical and Syndication — with the entitlements, time ranges and result
+  ceilings that differ between them, stated on the developer hub. Those tiers are recorded
+  below with price: null, because the tier boundaries are real published facts and the
+  money is not.
+plans:
+- name: Quick Start API
+  aka: GET API
+  price: null
+  currency: null
+  billing_period: null
+  price_note: not published; sold via sales contact
+  description: >-
+    The GET endpoint set, optimised for the most common use cases and for content over the
+    last seven days.
+  endpoints:
+  - /search
+  - /publisher
+  - /region
+  - /local
+  limits:
+    max_results_per_query: 500
+    time_range: last 7 days
+    caching: queries cached per API key for approximately 3 minutes
+    cors: 1 cross-origin origin per API key, configured by NewsWhip on request
+  source: https://developer.newswhip.com/docs/api-features
+- name: Historical API
+  aka: POST API
+  price: null
+  currency: null
+  billing_period: null
+  price_note: not published; sold via sales contact
+  description: >-
+    Full access to the complete tracked-content and social-data database, with
+    sophisticated search and filtering. Historical subscribers also get the Quick Start
+    API.
+  endpoints:
+  - /articles
+  - /fbPosts
+  - /fbInfluencers
+  - /twitterInfluencers
+  - /articlesByHrefs
+  - /stats
+  limits:
+    max_results_per_query: 5000
+    time_range: >-
+      historical data from 2018 onward (the removal of /trendingEntities and /igPosts
+      moved the retrieval floor to 2018)
+    caching: never cached
+    cors: server-side only
+  includes:
+  - Quick Start API
+  source: https://developer.newswhip.com/docs/api-features
+- name: Syndication API
+  price: null
+  currency: null
+  billing_period: null
+  price_note: not published; available only to Syndication product customers
+  description: >-
+    Programmatic access to the NewsWhip Syndication text-matching service, which identifies
+    reuse of a customer's content by other publishers.
+  endpoints:
+  - /syndicatedArticles
+  limits:
+    max_results_per_query: 5000
+    caching: never cached
+    cors: server-side only
+  availability: Syndication customers only
+  source: https://developer.newswhip.com/docs/api-features
+quotas_ref: rate-limits/newswhip-rate-limits.yml
+signup:
+  self_serve: false
+  url: http://go.newswhip.com/API-Access-Request.html
+  note: >-
+    API access is requested through a form; keys are provisioned by NewsWhip per customer.
+    There is no self-service key generation and no published trial price.
+evidence:
+- url: https://developer.newswhip.com/docs/api-features.md
+  status: 200
+- url: https://developer.newswhip.com/docs/result-size-limits.md
+  status: 200
+- url: https://www.newswhip.com/pricing/
+  status: 404
+- url: https://www.newswhip.com/newswhip-api/
+  status: 200

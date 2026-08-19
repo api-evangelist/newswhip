@@ -1,0 +1,620 @@
+{
+  "item": [
+    {
+      "id": "58c71fbe-7e44-4ff4-804e-d7f8efaf808e",
+      "name": "Rankings",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0ca8aa0a-9e0a-46aa-ab46-6f26074c0d3b",
+          "name": "/region",
+          "request": {
+            "name": "/region",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "region",
+                ":Region",
+                ":Category",
+                ":Time_Period"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevKey",
+                  "description": "(Required) Your API key"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "150",
+                  "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "World",
+                  "key": "Region",
+                  "description": "(Required) Filters articles published in {region}. The region should be passed in English, using the reference data linked below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "All",
+                  "key": "Category",
+                  "description": "(Required) Filters articles by {category}. Note: the category (topic) should be passed in English, using the reference data linked below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "24",
+                  "key": "Time_Period",
+                  "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ebc5040b-2b9f-4ad5-bb14-9390e79cdf45",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    ":Region",
+                    ":Category",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "World",
+                      "key": "Region",
+                      "description": "(Required) Filters articles published in {region}. The region should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "All",
+                      "key": "Category",
+                      "description": "(Required) Filters articles by {category}. Note: the category (topic) should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\": 1000,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 292,\\n      \\\"recent_fb_counts\\\": 121080,\\n      \\\"recent_tw_counts\\\": 5186,\\n      \\\"relatedStories\\\": [\\n        \\n      ],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 438712,\\n        \\\"total_count_delta\\\": 121080,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 27.785593513761\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 31157,\\n        \\\"total_count_delta\\\": 5186,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"tw_overperforming\\\": 20.063359883215\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 22,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 1131719,\\n      \\\"predicted_timestamp\\\": 1522338239279,\\n      \\\"uuid\\\": \\\"97b2ca00-31f7-11e8-be5b-ef989ddb8d11\\\",\\n      \\\"publication_timestamp\\\": 1522179772000,\\n      \\\"link\\\": \\\"https://www.nytimes.com/2018/03/27/opinion/nikolas-cruz-shooting-florida.html\\\",\\n      \\\"headline\\\": \\\"Opinion | I Tried to Befriend Nikolas Cruz. He Still Killed My Friends.\\\",\\n      \\\"excerpt\\\": \\\"The notion that the Parkland shootings wouldn\\\\u2019t have occurred if students had been kinder is deeply dangerous.\\\",\\n      \\\"keywords\\\": \\\"Parkland Shooting,Nikolas Cruz,Marjory Stoneman Douglas,Murders and Homicides\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"nytimes.com\\\",\\n        \\\"domain\\\": \\\"nytimes.com\\\",\\n        \\\"link\\\": \\\"https://nytimes.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"\\n      },\\n      \\\"image_link\\\": \\\"https://static01.nyt.com/images/2018/03/27/opinion/27Robinson/27Robinson-facebookJumbo.jpg\\\",\\n      \\\"has_video\\\": false,\\n      \\\"nw_score\\\": 1781.0086007513,\\n      \\\"max_nw_score\\\": 9797.2621208147,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 2,\\n          \\\"name\\\": \\\"News\\\"\\n        },\\n        {\\n          \\\"id\\\": 19,\\n          \\\"name\\\": \\\"Opinion\\\"\\n        }\\n      ],\\n      \\\"authors\\\": [\\n        \\\"ISABELLE ROBINSON\\\"\\n      ],\\n      \\\"entities\\\": [\\n        \\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "81f8d99a-0feb-4989-9c42-0469475536bb",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    ":Region",
+                    ":Category",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "World",
+                      "key": "Region",
+                      "description": "(Required) Filters articles published in {region}. The region should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "All",
+                      "key": "Category",
+                      "description": "(Required) Filters articles by {category}. Note: the category (topic) should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\\"error\\\":{\\\"message\\\":\\\"Unknown country or region. Received: Wod\\\",\\\"id\\\":\\\"2f0c0762-f0ea-4b5a-bd3e-019d259895e2\\\"}}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f09f6d71-808f-44cd-8160-09b75709dfb6",
+          "name": "/publisher",
+          "request": {
+            "name": "/publisher",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "publisher",
+                ":Publisher",
+                ":Time_Period"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "150",
+                  "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "nytimes.com",
+                  "key": "Publisher",
+                  "description": "(Required) Any domain or subdomain. i.e. nytimes.com, blog.newswhip.com"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "24",
+                  "key": "Time_Period",
+                  "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b460bd9b-5306-4cd4-b3f2-ee4112d1b1f2",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "publisher",
+                    ":Publisher",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "nytimes.com",
+                      "key": "Publisher",
+                      "description": "(Required) Any domain or subdomain. i.e. nytimes.com, blog.newswhip.com"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\": 702,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 211,\\n      \\\"recent_fb_counts\\\": 3760,\\n      \\\"recent_tw_counts\\\": 188,\\n      \\\"videos\\\": [],\\n      \\\"relatedStories\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 48195,\\n        \\\"total_count_delta\\\": 3760,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 2.884757949529689\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 7431,\\n        \\\"total_count_delta\\\": 188,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"tw_overperforming\\\": 4.646973523569058\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 1,\\n        \\\"delta_period\\\": 211,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 74438,\\n      \\\"predicted_timestamp\\\": 1522571075969,\\n      \\\"uuid\\\": \\\"3a4c6b20-3443-11e8-ab88-49c2dc76b82d\\\",\\n      \\\"publication_timestamp\\\": 1522432393000,\\n      \\\"link\\\": \\\"https://www.nytimes.com/2018/03/30/us/stephon-clark-independent-autopsy.html\\\",\\n      \\\"headline\\\": \\\"Stephon Clark Was Shot 8 Times Primarily in His Back, Family-Ordered Autopsy Finds\\\",\\n      \\\"excerpt\\\": \\\"A lawyer for the family said the findings proved that Mr. Clark could not have been moving in a threatening fashion toward Sacramento officers when they opened fire.\\\",\\n      \\\"keywords\\\": \\\"Stephon Clark,Police Brutality;Police Misconduct;Police Shootings\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"nytimes.com\\\",\\n        \\\"domain\\\": \\\"nytimes.com\\\",\\n        \\\"link\\\": \\\"https://nytimes.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"\\n      },\\n      \\\"image_link\\\": \\\"https://static01.nyt.com/images/2018/03/22/autossell/sacramento-schooting2/sacramento-schooting2-facebookJumbo-v2.jpg\\\",\\n      \\\"has_video\\\": true,\\n      \\\"nw_score\\\": 280.85125702122036,\\n      \\\"max_nw_score\\\": 3212.7672437775227,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 2,\\n          \\\"name\\\": \\\"News\\\"\\n        },\\n        {\\n          \\\"id\\\": 668,\\n          \\\"name\\\": \\\"Events\\\"\\n        }\\n      ],\\n      \\\"authors\\\": [\\n        \\\"FRANCES ROBLES\\\"\\n      ],\\n      \\\"entities\\\": [\\n        \\\"Sacramento\\\",\\n        \\\"Mr Clark\\\"\\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fba51dfb-a41b-4fba-9765-03db68b08832",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "publisher",
+                    ":Publisher",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "nytimes.com",
+                      "key": "Publisher",
+                      "description": "(Required) Any domain or subdomain. i.e. nytimes.com, blog.newswhip.com"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "text/plain"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <title>Bad Request</title>\n        <link rel=\"shortcut icon\" href=\"data:image/png;\">\n        <style>\n            html, body, pre {\n                margin: 0;\n                padding: 0;\n                font-family: Monaco, 'Lucida Console', monospace;\n                background: #ECECEC;\n            }\n            h1 {\n                margin: 0;\n                background: #AD632A;\n                padding: 20px 45px;\n                color: #fff;\n                text-shadow: 1px 1px 1px rgba(0,0,0,.3);\n                border-bottom: 1px solid #9F5805;\n                font-size: 28px;\n            }\n            p#detail {\n                margin: 0;\n                padding: 15px 45px;\n                background: #F6A960;\n                border-top: 4px solid #D29052;\n                color: #733512;\n                text-shadow: 1px 1px 1px rgba(255,255,255,.3);\n                font-size: 14px;\n                border-bottom: 1px solid #BA7F5B;\n            }\n        </style>\n    </head>\n    <body>\n        <h1>Bad Request</h1>\n\n        <p id=\"detail\">\n            For request 'GET /api/v1/publisher/your_pubisher/your_time_period?key=DevHub' [Cannot parse parameter time as Int: For input string: &quot;null&quot;]\n        </p>\n\n    </body>\n</html>",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa668260-2048-4037-9301-3c7765fb90be",
+          "name": "/local",
+          "request": {
+            "name": "/local",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "local",
+                ":City",
+                "All",
+                ":Time_Period"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "150",
+                  "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "Seattle, WA",
+                  "key": "City",
+                  "description": "(Required) Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "24",
+                  "key": "Time_Period",
+                  "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c961836-b898-43b2-81c2-b5a080855948",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "local",
+                    ":City",
+                    "All",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "Seattle, WA",
+                      "key": "City",
+                      "description": "(Required) Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{ \\n  \\\"total_match\\\":620,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 249,\\n      \\\"recent_fb_counts\\\": 41,\\n      \\\"recent_tw_counts\\\": 1,\\n      \\\"videos\\\": [\\n        \\\"http://www.youtube.com/watch?v=2vk8T35bbQc\\\",\\n        \\\"http://www.youtube.com/watch?v=28G9VLQezVg\\\",\\n        \\\"http://www.youtube.com/watch?v=c02O4Wvo7QI\\\",\\n        \\\"http://www.youtube.com/watch?v=TuuumQ4hcDg\\\",\\n        \\\"http://www.youtube.com/watch?v=nnFZKnlQlDw\\\"\\n      ],\\n      \\\"relatedStories\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 2422,\\n        \\\"total_count_delta\\\": 41,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 7,\\n        \\\"total_count_delta\\\": 1,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 1,\\n        \\\"delta_period\\\": 249,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 2638,\\n      \\\"predicted_timestamp\\\": 1522561756839,\\n      \\\"uuid\\\": \\\"184c2eb0-343f-11e8-9e4c-83fcdd16cc63\\\",\\n      \\\"publication_timestamp\\\": 1522430612000,\\n      \\\"link\\\": \\\"http://bipartisanreport.com/2018/03/30/breaking-fbi-detains-trump-ally-at-airport-donald-feeling-robert-mueller-heat/\\\",\\n      \\\"headline\\\": \\\"BREAKING: FBI Detains Trump Ally At Airport - Donald Feeling Robert Mueller Heat\\\",\\n      \\\"excerpt\\\": \\\"The Russia investigation is continuing to proceed, whether the president and his allies are fond of the idea or not. Although the House Intelligence Committee moved to end its investigation, other lines of inquiry are still very much open. Special Counsel Robert Mueller, for instance, has proven that he will leave no stone unturned in … Continued\\\",\\n      \\\"keywords\\\": \\\"\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"bipartisanreport.com\\\",\\n        \\\"domain\\\": \\\"bipartisanreport.com\\\",\\n        \\\"link\\\": \\\"http://bipartisanreport.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"\\n      },\\n      \\\"image_link\\\": \\\"http://cdn.bipartisanreport.com/wordpress/wp-content/uploads/2018/03/935503612.jpg\\\",\\n      \\\"has_video\\\": true,\\n      \\\"nw_score\\\": 6.6169187100695535,\\n      \\\"max_nw_score\\\": 1029.80745168683,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 2,\\n          \\\"name\\\": \\\"News\\\"\\n        },\\n        {\\n          \\\"id\\\": 20,\\n          \\\"name\\\": \\\"Politics\\\"\\n        }\\n      ],\\n      \\\"authors\\\": [\\n        \\\"Caleb Newton\\\"\\n      ],\\n      \\\"entities\\\": [\\n        \\\"Russia\\\",\\n        \\\"House Intelligence Committee\\\",\\n        \\\"Robert Mueller\\\"\\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "80ff7fe7-20ac-4dcc-a3b0-78147c0313cc",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "local",
+                    ":City",
+                    "All",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "Seattle, WA",
+                      "key": "City",
+                      "description": "(Required) Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"time parameter is invalid. Received: 9999999\\\",\\n    \\\"id\\\": \\\"7554ca00-30ab-4ba0-a472-4e533e76e59a\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "524afdf1-4f26-4209-ba2e-3aec75edc51e",
+    "name": "quick-start-api-formerly-get-api Articles Rankings API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

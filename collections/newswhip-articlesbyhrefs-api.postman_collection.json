@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "78563285-db35-4a37-88a9-3a1464b4af5c",
+      "name": "ArticlesByHrefs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0a0859ff-bc9e-4b0c-8d27-6d3b56b38884",
+          "name": "/articlesByHrefs",
+          "request": {
+            "name": "/articlesByHrefs",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "articlesByHrefs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevKey",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hrefs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "be381697-a31f-4457-8ffd-52077dd4ab7e",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articlesByHrefs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hrefs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"[\\n    {\\n        \\\"href\\\": \\\"https://www.theanimalclub.net/dogs/senior-dog-is-so-happy-that-family-remembered-his-13th-birthday/\\\",\\n        \\\"articles\\\": [\\n            {\\n                \\\"delta_time\\\": 8880,\\n                \\\"recent_fb_counts\\\": 4,\\n                \\\"recent_tw_counts\\\": 0,\\n                \\\"relatedStories\\\": [],\\n                \\\"fb_data\\\": {\\n                    \\\"total_engagement_count\\\": 4341,\\n                    \\\"likes\\\": 3740,\\n                    \\\"comments\\\": 244,\\n                    \\\"shares\\\": 357,\\n                    \\\"total_count_delta\\\": 4,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"tw_data\\\": {\\n                    \\\"tw_count\\\": 0,\\n                    \\\"total_count_delta\\\": 0,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"li_data\\\": {\\n                    \\\"li_count\\\": 0,\\n                    \\\"total_count_delta\\\": 0,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"pi_data\\\": {\\n                    \\\"pi_count\\\": 0,\\n                    \\\"delta_period\\\": 8880,\\n                    \\\"delta_period_unit\\\": \\\"m\\\"\\n                },\\n                \\\"predicted_interactions\\\": 4341.0,\\n                \\\"predicted_timestamp\\\": 1584842548933,\\n                \\\"uuid\\\": \\\"12f51c50-531a-11ea-b13e-cf0e7a652529\\\",\\n                \\\"publication_timestamp\\\": 1582102250000,\\n                \\\"link\\\": \\\"https://www.theanimalclub.net/dogs/senior-dog-is-so-happy-that-family-remembered-his-13th-birthday/\\\",\\n                \\\"headline\\\": \\\"Senior dog is so happy that people remembered his 13th birthday\\\",\\n                \\\"excerpt\\\": \\\"Such a good doggo.\\\",\\n                \\\"keywords\\\": \\\"\\\",\\n                \\\"source\\\": {\\n                    \\\"publisher\\\": \\\"theanimalclub.net\\\",\\n                    \\\"domain\\\": \\\"theanimalclub.net\\\",\\n                    \\\"link\\\": \\\"https://theanimalclub.net\\\",\\n                    \\\"country\\\": \\\"\\\",\\n                    \\\"country_code\\\": \\\"\\\",\\n                    \\\"language\\\": \\\"en\\\"\\n                },\\n                \\\"image_link\\\": \\\"https://www.theanimalclub.net/wp-content/uploads/sites/3/2020/02/Ba.jpg\\\",\\n                \\\"has_video\\\": false,\\n                \\\"nw_score\\\": 0.00865636383437796,\\n                \\\"max_nw_score\\\": 873.6694656721905,\\n                \\\"topics\\\": [],\\n                \\\"authors\\\": [\\n                    \\\"The Animal Club\\\"\\n                ],\\n                \\\"entities\\\": []\\n            }\\n        ]\\n    }\\n]\\n\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c7dc2ef-e2bc-4f4f-b969-e08118cee704",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "articlesByHrefs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hrefs\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"error\\\": {\\n        \\\"message\\\": \\\"Number of HREFs exceeds max limit of 5\\\",\\n        \\\"id\\\": \\\"50140de9-59d3-465a-9da7-499decdff98a\\\"\\n    }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4f44d3d4-09c9-4923-a426-21589840dee3",
+    "name": "quick-start-api-formerly-get-api Articles ArticlesByHrefs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

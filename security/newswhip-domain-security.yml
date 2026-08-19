@@ -1,25 +1,27 @@
-generated: '2026-07-20'
+generated: '2026-08-13'
 method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: newswhip.com
   https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  8 18:56:13 2026 GMT
   hsts: false
-  hsts_max_age: null
-- host: api.newswhip.com
-  https: true
-  hsts: true
-  hsts_max_age: 15724800
-  hsts_include_subdomains: true
 - host: developer.newswhip.com
   https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 14:16:27 2026 GMT
   hsts: true
   hsts_max_age: 31536000
+- host: api.newswhip.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  7 19:12:54 2026 GMT
+  hsts: null
 domains:
 - domain: newswhip.com
   dnssec: false
   caa: []
   spf: true
-  spf_record: v=spf1 include:_spf.google.com include:_spf.salesforce.com include:spf.mandrillapp.com include:mktomail.com
-    include:mg-spf.greenhouse.io ~all
   dmarc: true
   dmarc_policy: reject

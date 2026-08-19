@@ -1,0 +1,72 @@
+generated: '2026-08-13'
+method: searched
+source: https://developer.newswhip.com/docs/rate-limits
+docs: https://developer.newswhip.com/docs/rate-limits
+checked: '2026-08-13'
+limit_count: 2
+summary: >-
+  NewsWhip publishes a single, flat, numeric rate limit for the whole API on its developer
+  hub: 100 requests per rolling 5 minutes, with a burst ceiling of 5 requests per second.
+  Exhaustion returns HTTP 429. The docs do NOT document any rate-limit response headers,
+  and none were observed on a live unauthenticated request, so a client has no runtime
+  signal for remaining quota or reset time — only the 429 itself.
+limits:
+- id: rolling-window
+  scope: per-key
+  window: 5m
+  window_note: rolling window
+  limit: 100
+  unit: requests
+  status_on_exhaustion: 429
+  source: https://developer.newswhip.com/docs/rate-limits
+- id: burst
+  scope: per-key
+  window: 1s
+  limit: 5
+  unit: requests
+  burst: 5
+  status_on_exhaustion: 429
+  source: https://developer.newswhip.com/docs/rate-limits
+headers:
+  documented: false
+  observed: []
+  ratelimit_standard: null
+  retry_after: false
+  note: >-
+    The rate-limits page documents only the 429 status. A live probe of
+    GET https://api.newswhip.com/v1/search?q=test on 2026-08-13 returned HTTP 403
+    (no API key) with response headers strict-transport-security,
+    x-content-type-options, referrer-policy, x-permitted-cross-domain-policies and
+    content-security-policy — no X-RateLimit-*, no RateLimit-*, no Retry-After.
+    Whether those headers appear on an authenticated or throttled response could not be
+    established without a key.
+exhaustion:
+  status: 429
+  message: 'Too Many Requests - Enhance your calm! or contact us for higher limits!'
+  docs: https://developer.newswhip.com/docs/errors
+  ref: errors/newswhip-problem-types.yml
+increase_path:
+  method: contact
+  note: >-
+    The errors reference invites customers to contact NewsWhip for higher limits; limits
+    are not self-service and are not published per plan.
+  contact: api@newswhip.com
+mitigation_guidance:
+  documented: true
+  source: https://developer.newswhip.com/docs/rate-limits
+  note: >-
+    NewsWhip advises collapsing near-identical consecutive queries into one request using
+    Lucene `OR` operators (for example, searching several URLs in a single query) rather
+    than issuing one request per term.
+related:
+  caching: https://developer.newswhip.com/docs/server-side-caching
+  caching_note: >-
+    Quick Start API queries are cached per API key for roughly 3 minutes; Historical and
+    Syndication API queries are never cached. Caching therefore only softens the limit on
+    the Quick Start endpoints.
+  result_size_limits: https://developer.newswhip.com/docs/result-size-limits
+evidence:
+- url: https://developer.newswhip.com/docs/rate-limits.md
+  status: 200
+- url: https://api.newswhip.com/v1/search?q=test
+  status: 403

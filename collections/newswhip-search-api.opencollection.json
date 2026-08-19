@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "quick-start-api-formerly-get-api Articles Search API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.newswhip.com/v1/search",
+            "params": [
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "The keywords or phrase that you'd like to search for"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query",
+                "description": "Your API key."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+              }
+            ]
+          },
+          "docs": "/search"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

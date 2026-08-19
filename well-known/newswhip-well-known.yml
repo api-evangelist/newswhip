@@ -1,0 +1,118 @@
+generated: '2026-08-13'
+method: probed
+source: direct HTTP probe of every NewsWhip host
+checked: '2026-08-13'
+summary: >-
+  No /.well-known/ document is served on any NewsWhip host. Every path probed returned a
+  404 (or, on the apex, a 301 to www which then 404s). www.newswhip.com and
+  developer.newswhip.com answer 404 with a full HTML page — the WordPress 404 template and
+  the ReadMe hub 404 template respectively — so nothing here is a document, only a shell.
+  No WellKnown or SecurityTxt pointer is emitted in apis.yml as a result.
+hits: 0
+hosts:
+- host: newswhip.com
+  note: apex 301-redirects to www.newswhip.com for every /.well-known/ path
+  probes:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+- host: www.newswhip.com
+  note: 404s return the WordPress 404 HTML template (~800KB), not a document
+  probes:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: api.newswhip.com
+  note: API host returns its own JSON-gateway 404 HTML page for all /.well-known/ paths
+  probes:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: developer.newswhip.com
+  note: >-
+    ReadMe-hosted developer hub. Serves a real /llms.txt (200, captured in
+    llms/newswhip-llms.txt) and a real MCP endpoint at /mcp (401, see
+    mcp/newswhip-mcp.yml), but no /.well-known/ documents — including no
+    oauth-protected-resource or oauth-authorization-server for the gated MCP server.
+  probes:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+    file: null
+  - path: /.well-known/oauth-protected-resource/mcp
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null

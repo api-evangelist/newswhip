@@ -1,11 +1,11 @@
 # generated: '2026-08-13'
 # method: generated
-# source: openapi/_original/newswhip-openapi.yml
+# source: openapi/newswhip-local-api-openapi.yml
 overlay: 1.0.0
 info:
-  title: API Evangelist enhancements for the NewsWhip API
-  version: '1.1.0'
-extends: openapi/_original/newswhip-openapi.yml
+  title: API Evangelist enhancements for quick-start-api-formerly-get-api Articles Local API
+  version: 1.0.0
+extends: openapi/newswhip-local-api-openapi.yml
 actions:
 - target: $.info
   update:
@@ -16,16 +16,10 @@ actions:
       errors: errors/newswhip-problem-types.yml
       conventions: conventions/newswhip-conventions.yml
       lifecycle: lifecycle/newswhip-lifecycle.yml
-      changelog: changelog/newswhip-changelog.yml
       rate-limits: rate-limits/newswhip-rate-limits.yml
       plans: plans/newswhip-plans-pricing.yml
       data-model: data-model/newswhip-data-model.yml
       conformance: conformance/newswhip-conformance.yml
-      packages: packages/newswhip-packages.yml
-      well-known: well-known/newswhip-well-known.yml
-      mcp: mcp/newswhip-mcp.yml
-      tool-crosswalk: mcp/newswhip-tool-crosswalk.yml
-      skills: skills/_index.yml
 - target: $
   update:
     x-rate-limit:
@@ -34,10 +28,6 @@ actions:
       burst_per_second: 5
       status_on_exhaustion: 429
       docs: https://developer.newswhip.com/docs/rate-limits
-    x-error-envelope:
-      format: json
-      shape: '{"error":{"message":"<human readable>","id":"<uuid>"}}'
-      problem_json: false
 - target: $.paths.*.*.responses
   update:
     '403':
@@ -48,5 +38,3 @@ actions:
       description: Internal Server Error - retry later with backoff.
     '503':
       description: Service Unavailable - temporarily offline for maintenance.
-# Per-specification overlays (one per refined openapi/ document) live alongside this file as
-# newswhip-<key>-overlay.yaml and are wired to their API entry in apis.yml.

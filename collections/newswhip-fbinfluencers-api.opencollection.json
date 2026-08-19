@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "quick-start-api-formerly-get-api Articles FbInfluencers API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FbInfluencers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/fbInfluencers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.newswhip.com/v1/fbInfluencers",
+            "params": [
+              {
+                "name": "key",
+                "value": "",
+                "type": "query",
+                "description": "Your API key."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "/fbInfluencers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

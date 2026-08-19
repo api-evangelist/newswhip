@@ -1,0 +1,334 @@
+{
+  "item": [
+    {
+      "id": "9fa5f1cf-3b55-4de8-a4e6-c96f80725652",
+      "name": "Influencers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8a145890-e889-4b41-879e-0b61c1e03990",
+          "name": "/twitterInfluencers",
+          "request": {
+            "name": "/twitterInfluencers",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "twitterInfluencers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "dbb97317-845c-4474-8b67-99d20bb92b2f",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "twitterInfluencers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"twitterInfluencers\\\": [\\n    {\\n      \\\"twitter_id\\\": 168683422,\\n      \\\"twitter_handle\\\": \\\"BigHitEnt\\\",\\n      \\\"likes_count\\\": 6,\\n      \\\"followers_count\\\": 6054861,\\n      \\\"following_count\\\": 18,\\n      \\\"statuses_count\\\": 4711,\\n      \\\"max_retweet_value\\\": 90757,\\n      \\\"social_referrals\\\": [\\n        {\\n          \\\"article_id\\\": \\\"43b5dc60-3140-11e8-be5b-ef989ddb8d11\\\",\\n          \\\"twitter_url\\\": \\\"https://twitter.com/any/status/978421147711651840\\\",\\n          \\\"favourite_count\\\": 247379,\\n          \\\"rt_count\\\": 90757,\\n          \\\"created_at\\\": 1522108754000,\\n          \\\"description\\\": \\\"How did they do the impossible, and crack the elusive and highly competitive American market? BTS is perhaps the most successful K-pop act of all time -- incredible when you consider the demand they've been able to generate in English-speaking markets.\\\",\\n          \\\"article_url\\\": \\\"https://www.forbes.com/sites/cfthomas/2018/03/26/bts-the-k-pop-group-that-finally-won-america-over/\\\"\\n        }\\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba050b73-1962-4a0c-bdb0-1c9994a31849",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "twitterInfluencers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Fields 'countryCode' is not allowed for filters query!\\\",\\n    \\\"id\\\": \\\"29d06ec3-0265-48e2-a3e4-acda03933f50\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "026c6e4f-19bd-4fb2-aa86-074974b250fc",
+          "name": "/fbInfluencers",
+          "request": {
+            "name": "/fbInfluencers",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fbInfluencers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b5de8cdc-76a4-4244-951f-e2cff7c18bc1",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fbInfluencers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"fbInfluencers\\\": [\\n    {\\n      \\\"fb_page_id\\\": 169597416843751,\\n      \\\"fb_username\\\": \\\"StandUpAmerica\\\",\\n      \\\"about\\\": \\\"We reject Donald Trump's dangerous agenda.  Join us to fight back!\\\",\\n      \\\"followers_count\\\": 1223257,\\n      \\\"likes_count\\\": 1223257,\\n      \\\"profile_image\\\": \\\"https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/17201451_252064575263701_2807050516564195940_n.jpg?_nc_cat=0&oh=d372b746f090e6e23cf150d3d65e4406&oe=5B34EE5E\\\",\\n      \\\"max_fb_interactions\\\": 164246,\\n      \\\"social_referrals\\\": [\\n        {\\n          \\\"article_id\\\": \\\"784a01b0-2fcc-11e8-ab88-49c2dc76b82d\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_466933743776782\\\",\\n          \\\"headline\\\": \\\"Stunning photos show how many people joined the March for Our Lives protests in cities across the US\\\",\\n          \\\"description\\\": \\\"Throngs of people hit the streets on Saturday in cities across the United States for the March for Our Lives protests against gun violence.\\\",\\n          \\\"fb_total_interactions\\\": 164246,\\n          \\\"created_at\\\": 1521948383000,\\n          \\\"article_url\\\": \\\"http://www.businessinsider.com/photos-march-for-our-lives-crowds-2018-3\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"6a731200-30ff-11e8-8010-b589f56f0c06\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_467780303692126\\\",\\n          \\\"headline\\\": \\\"It’s official: March for Our Lives was one of the biggest youth protests since the Vietnam War\\\",\\n          \\\"description\\\": \\\"The preliminary crowd counts confirm the weekend’s marches and rallies were huge.\\\",\\n          \\\"fb_total_interactions\\\": 98396,\\n          \\\"created_at\\\": 1522076814000,\\n          \\\"article_url\\\": \\\"https://www.vox.com/policy-and-politics/2018/3/26/17160646/march-for-our-lives-crowd-size-count\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"fb0b5a00-2fa3-11e8-be5b-ef989ddb8d11\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_466828240453999\\\",\\n          \\\"headline\\\": \\\"This Is What The March For Our Lives Looked Like From Space\\\",\\n          \\\"description\\\": \\\"Whoa.\\\",\\n          \\\"fb_total_interactions\\\": 65564,\\n          \\\"created_at\\\": 1521930886000,\\n          \\\"article_url\\\": \\\"https://www.huffingtonpost.com/entry/this-is-what-the-march-for-our-lives-looked-like-from-space_us_5ab6ae5de4b008c9e5f7dbe4\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"a72bd270-2f7b-11e8-8010-b589f56f0c06\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_466628110474012\\\",\\n          \\\"headline\\\": \\\"Students descend on Mar-a-Lago as Trump flees thousands in DC\\\",\\n          \\\"description\\\": \\\"If Trump was hoping to find a safe space at his luxury resort, he's about to figure out he was sorely mistaken.\\\",\\n          \\\"fb_total_interactions\\\": 46234,\\n          \\\"created_at\\\": 1521909111000,\\n          \\\"article_url\\\": \\\"https://shareblue.com/march-for-our-lives-pennsylvania-avenue-to-mar-a-lago/\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"d8a9b5f0-2f9a-11e8-be5b-ef989ddb8d11\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_466759080460915\\\",\\n          \\\"headline\\\": \\\"Organizers estimate 800K people in DC for march so far: report\\\",\\n          \\\"description\\\": \\\"Organizers are reporting as many as 800,000 people gathered in Washington, D.C., on Saturday afternoon for the anti-gun violence rally, NBC reported. \\\",\\n          \\\"fb_total_interactions\\\": 42502,\\n          \\\"created_at\\\": 1521922932000,\\n          \\\"article_url\\\": \\\"http://thehill.com/blogs/blog-briefing-room/news/380116-organizers-estimate-800k-people-in-dc-for-march-so-far\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"a0929420-336e-11e8-8010-b589f56f0c06\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_469580743512082\\\",\\n          \\\"headline\\\": \\\"TripAdvisor says it will stop ads for right-wing TV host Laura Ingraham after she criticized Parkland shooting survivor\\\",\\n          \\\"description\\\": \\\"Online travel website TripAdvisor said it will stop advertising on right-wing host Laura Ingraham's television after she attacked a victim of the February Parkland, Florida school shooting on Twitter.\\\",\\n          \\\"fb_total_interactions\\\": 30762,\\n          \\\"created_at\\\": 1522371000000,\\n          \\\"article_url\\\": \\\"https://www.cnbc.com/2018/03/29/tripadvisor-drops-laura-ingraham-after-she-attacked-parkland-activist.html\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"badbfa40-2f83-11e8-9e4c-83fcdd16cc63\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_466707257132764\\\",\\n          \\\"headline\\\": \\\"Photos From the \\\\\\\"March for Our Lives\\\\\\\"\\\",\\n          \\\"description\\\": \\\"Hundreds of thousands of Americans are taking to the streets today in hundreds of coordinated protests, calling for lawmakers to address school safety and gun violence.\\\",\\n          \\\"fb_total_interactions\\\": 29547,\\n          \\\"created_at\\\": 1521917356000,\\n          \\\"article_url\\\": \\\"https://www.theatlantic.com/photo/2018/03/photos-from-the-march-for-our-lives/556454/\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"4fb29480-3394-11e8-a52e-a128b18e226e\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_469517180185105\\\",\\n          \\\"headline\\\": \\\"Advertisers desert Ingraham over Parkland controversy\\\",\\n          \\\"description\\\": \\\"At least half a dozen advertisers on Laura Ingraham's primetime Fox News show pulled their support on Thursday in response to her comments mocking Parkland, Fla., shooting survivor David Hogg over his rejection from colleg\\\",\\n          \\\"fb_total_interactions\\\": 25715,\\n          \\\"created_at\\\": 1522359516000,\\n          \\\"article_url\\\": \\\"http://thehill.com/blogs/blog-briefing-room/news/380901-advertisers-desert-ingraham-over-parkland-controversy\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"a4caead0-3367-11e8-ab88-49c2dc76b82d\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_469380743532082\\\",\\n          \\\"headline\\\": \\\"Laura Ingraham just lost an advertiser over David Hogg's boycott\\\",\\n          \\\"description\\\": \\\"Hogg is asking his nearly 600,000 Twitter followers to boycott Laura Ingraham's advertisers\\\",\\n          \\\"fb_total_interactions\\\": 25373,\\n          \\\"created_at\\\": 1522340516000,\\n          \\\"article_url\\\": \\\"https://news.vice.com/en_us/article/43b3md/laura-ingraham-just-lost-an-advertiser-over-david-hoggs-boycott\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"a7edffe0-31be-11e8-ab88-49c2dc76b82d\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_468387043631452\\\",\\n          \\\"headline\\\": \\\"The US needs to borrow almost $300 billion this week\\\",\\n          \\\"description\\\": \\\"Uncle Sam needs to borrow a ton of money this week even as Washington engages in a trade spat with China, its biggest foreign creditor.\\\",\\n          \\\"fb_total_interactions\\\": 25240,\\n          \\\"created_at\\\": 1522167262000,\\n          \\\"article_url\\\": \\\"http://money.cnn.com/2018/03/27/investing/us-debt-sale-record-treasury/index.html\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"84923c60-320d-11e8-be5b-ef989ddb8d11\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_468831330253690\\\",\\n          \\\"headline\\\": \\\"Senator asks the NRA to hand over records on foreign funding, spending\\\",\\n          \\\"description\\\": \\\"Sen. Ron Wyden asked the NRA to turn over detailed internal records about foreign funding it received in the past three years and how it spent that money, including whether any of it went toward influencing American elections.\\\",\\n          \\\"fb_total_interactions\\\": 23300,\\n          \\\"created_at\\\": 1522249015000,\\n          \\\"article_url\\\": \\\"https://www.pbs.org/newshour/nation/senator-asks-the-nra-to-hand-over-records-on-foreign-funding-spending\\\"\\n        },\\n        {\\n          \\\"article_id\\\": \\\"3cf26aa0-338f-11e8-be5b-ef989ddb8d11\\\",\\n          \\\"fb_post_id\\\": \\\"169597416843751_469560030180820\\\",\\n          \\\"headline\\\": \\\"E.P.A. Prepares to Roll Back Rules Requiring Cars to Be Cleaner and More Efficient\\\",\\n          \\\"description\\\": \\\"The Trump administration, handing automakers a victory, is preparing to announce an effort to weaken strict Obama-era pollution standards.\\\",\\n          \\\"fb_total_interactions\\\": 12842,\\n          \\\"created_at\\\": 1522366957000,\\n          \\\"article_url\\\": \\\"https://www.nytimes.com/2018/03/29/climate/epa-cafe-auto-pollution-rollback.html\\\"\\n        }\\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8344e36d-db07-4f16-b5ea-7c7bdf70a883",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fbInfluencers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Fields 'foo_field' is not allowed for filters query!\\\",\\n    \\\"id\\\": \\\"58a59557-b7f4-42a9-b65f-af33d666499c\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7ad3ac97-cce5-4e70-81a3-547cbe2a80c3",
+    "name": "quick-start-api-formerly-get-api Articles Influencers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

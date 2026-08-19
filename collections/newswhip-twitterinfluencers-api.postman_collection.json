@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "acf0bc39-7941-4bf5-ba77-10c6c54bd931",
+      "name": "TwitterInfluencers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a1027940-3dd3-4197-be0b-11f811b858c8",
+          "name": "/twitterInfluencers",
+          "request": {
+            "name": "/twitterInfluencers",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "twitterInfluencers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "18bb8d79-f2dc-4674-8f5c-22349705db53",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "twitterInfluencers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"twitterInfluencers\\\": [\\n    {\\n      \\\"twitter_id\\\": 168683422,\\n      \\\"twitter_handle\\\": \\\"BigHitEnt\\\",\\n      \\\"likes_count\\\": 6,\\n      \\\"followers_count\\\": 6054861,\\n      \\\"following_count\\\": 18,\\n      \\\"statuses_count\\\": 4711,\\n      \\\"max_retweet_value\\\": 90757,\\n      \\\"social_referrals\\\": [\\n        {\\n          \\\"article_id\\\": \\\"43b5dc60-3140-11e8-be5b-ef989ddb8d11\\\",\\n          \\\"twitter_url\\\": \\\"https://twitter.com/any/status/978421147711651840\\\",\\n          \\\"favourite_count\\\": 247379,\\n          \\\"rt_count\\\": 90757,\\n          \\\"created_at\\\": 1522108754000,\\n          \\\"description\\\": \\\"How did they do the impossible, and crack the elusive and highly competitive American market? BTS is perhaps the most successful K-pop act of all time -- incredible when you consider the demand they've been able to generate in English-speaking markets.\\\",\\n          \\\"article_url\\\": \\\"https://www.forbes.com/sites/cfthomas/2018/03/26/bts-the-k-pop-group-that-finally-won-america-over/\\\"\\n        }\\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3b4fb67-514c-4210-975c-9fc6b01700c5",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "twitterInfluencers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Fields 'countryCode' is not allowed for filters query!\\\",\\n    \\\"id\\\": \\\"29d06ec3-0265-48e2-a3e4-acda03933f50\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8869e666-2878-4cfe-a0d5-d7643711047a",
+    "name": "quick-start-api-formerly-get-api Articles TwitterInfluencers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

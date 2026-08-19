@@ -1,0 +1,243 @@
+{
+  "item": [
+    {
+      "id": "24897b22-cae0-4c3b-bbdd-f0558353659b",
+      "name": "Region",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "54080a93-635e-4ecc-91cd-92e752a8e9b4",
+          "name": "/region",
+          "request": {
+            "name": "/region",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "region",
+                ":Region",
+                ":Category",
+                ":Time_Period"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevKey",
+                  "description": "(Required) Your API key"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "150",
+                  "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "World",
+                  "key": "Region",
+                  "description": "(Required) Filters articles published in {region}. The region should be passed in English, using the reference data linked below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "All",
+                  "key": "Category",
+                  "description": "(Required) Filters articles by {category}. Note: the category (topic) should be passed in English, using the reference data linked below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "24",
+                  "key": "Time_Period",
+                  "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "521969b7-e475-4c88-aa14-be0fbcfb0465",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    ":Region",
+                    ":Category",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "World",
+                      "key": "Region",
+                      "description": "(Required) Filters articles published in {region}. The region should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "All",
+                      "key": "Category",
+                      "description": "(Required) Filters articles by {category}. Note: the category (topic) should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\": 1000,\\n  \\\"articles\\\": [\\n    {\\n      \\\"delta_time\\\": 292,\\n      \\\"recent_fb_counts\\\": 121080,\\n      \\\"recent_tw_counts\\\": 5186,\\n      \\\"relatedStories\\\": [\\n        \\n      ],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 438712,\\n        \\\"total_count_delta\\\": 121080,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 27.785593513761\\n      },\\n      \\\"tw_data\\\": {\\n        \\\"tw_count\\\": 31157,\\n        \\\"total_count_delta\\\": 5186,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"tw_overperforming\\\": 20.063359883215\\n      },\\n      \\\"li_data\\\": {\\n        \\\"li_count\\\": 0,\\n        \\\"total_count_delta\\\": 0,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"pi_data\\\": {\\n        \\\"pi_count\\\": 22,\\n        \\\"delta_period\\\": 292,\\n        \\\"delta_period_unit\\\": \\\"m\\\"\\n      },\\n      \\\"predicted_interactions\\\": 1131719,\\n      \\\"predicted_timestamp\\\": 1522338239279,\\n      \\\"uuid\\\": \\\"97b2ca00-31f7-11e8-be5b-ef989ddb8d11\\\",\\n      \\\"publication_timestamp\\\": 1522179772000,\\n      \\\"link\\\": \\\"https://www.nytimes.com/2018/03/27/opinion/nikolas-cruz-shooting-florida.html\\\",\\n      \\\"headline\\\": \\\"Opinion | I Tried to Befriend Nikolas Cruz. He Still Killed My Friends.\\\",\\n      \\\"excerpt\\\": \\\"The notion that the Parkland shootings wouldn\\\\u2019t have occurred if students had been kinder is deeply dangerous.\\\",\\n      \\\"keywords\\\": \\\"Parkland Shooting,Nikolas Cruz,Marjory Stoneman Douglas,Murders and Homicides\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"nytimes.com\\\",\\n        \\\"domain\\\": \\\"nytimes.com\\\",\\n        \\\"link\\\": \\\"https://nytimes.com\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\"\\n      },\\n      \\\"image_link\\\": \\\"https://static01.nyt.com/images/2018/03/27/opinion/27Robinson/27Robinson-facebookJumbo.jpg\\\",\\n      \\\"has_video\\\": false,\\n      \\\"nw_score\\\": 1781.0086007513,\\n      \\\"max_nw_score\\\": 9797.2621208147,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 2,\\n          \\\"name\\\": \\\"News\\\"\\n        },\\n        {\\n          \\\"id\\\": 19,\\n          \\\"name\\\": \\\"Opinion\\\"\\n        }\\n      ],\\n      \\\"authors\\\": [\\n        \\\"ISABELLE ROBINSON\\\"\\n      ],\\n      \\\"entities\\\": [\\n        \\n      ]\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "dd8c078b-7b33-4361-b4ba-275b28389d45",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "region",
+                    ":Region",
+                    ":Category",
+                    ":Time_Period"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevKey"
+                    },
+                    {
+                      "key": "size",
+                      "value": "150"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "World",
+                      "key": "Region",
+                      "description": "(Required) Filters articles published in {region}. The region should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "All",
+                      "key": "Category",
+                      "description": "(Required) Filters articles by {category}. Note: the category (topic) should be passed in English, using the reference data linked below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "24",
+                      "key": "Time_Period",
+                      "description": "(Required) Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\\"error\\\":{\\\"message\\\":\\\"Unknown country or region. Received: Wod\\\",\\\"id\\\":\\\"2f0c0762-f0ea-4b5a-bd3e-019d259895e2\\\"}}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "56852f2b-4a64-4e8d-ac36-80d8d42e4a15",
+    "name": "quick-start-api-formerly-get-api Articles Region API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

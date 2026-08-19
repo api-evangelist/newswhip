@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "bfb84785-36ad-456a-a378-0b7ef36a99c8",
+      "name": "FbPosts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ecf7a2e1-3810-452c-b117-306d0e21b3d0",
+          "name": "/fbPosts",
+          "request": {
+            "name": "/fbPosts",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fbPosts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    \"country_code:us\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"default_fields\": [\n    \"page_name\",\n    \"external_link\"\n  ],\n  \"size\": 5,\n  \"content_type\": \"<string>\",\n  \"sort_by\": \"default\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c660328f-e2b4-4464-b4e1-03d2ef18fcc5",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fbPosts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"country_code:us\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"default_fields\": [\n    \"page_name\",\n    \"external_link\"\n  ],\n  \"size\": 5,\n  \"content_type\": \"<string>\",\n  \"sort_by\": \"default\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"total_match\\\":1500,\\n  \\\"fbPosts\\\": [\\n    {\\n      \\\"page_id\\\": \\\"1557825057865287\\\",\\n      \\\"page_name\\\": \\\"JayShettyIW\\\",\\n      \\\"post_type\\\": \\\"Native Video\\\",\\n      \\\"is_live_video\\\": false,\\n      \\\"fb_story\\\": \\\"Jay Shetty added a new episode.\\\",\\n      \\\"fb_sponsor_tags\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 2941272,\\n        \\\"total_count_delta\\\": 116841,\\n        \\\"delta_period\\\": 493,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 11.044809337609504,\\n        \\\"reactions\\\": {\\n          \\\"comments\\\": 54114,\\n          \\\"likes\\\": 405282,\\n          \\\"shares\\\": 2362549,\\n          \\\"loves\\\": 104918,\\n          \\\"wows\\\": 13387,\\n          \\\"hahas\\\": 441,\\n          \\\"sads\\\": 500,\\n          \\\"angrys\\\": 81\\n        }\\n      },\\n      \\\"uuid\\\": \\\"f94dab70-31c7-11e8-a52e-a128b18e226e\\\",\\n      \\\"publication_timestamp\\\": 1522159200000,\\n      \\\"link\\\": \\\"https://www.facebook.com/1557825057865287/posts/1995740577407064\\\",\\n      \\\"headline\\\": \\\"Before You Feel Pressure Watch This\\\",\\n      \\\"excerpt\\\": \\\"Everyone has a different clock. Wait for your time\\\",\\n      \\\"keywords\\\": \\\"\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"\\\",\\n        \\\"link\\\": \\\"http://\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\",\\n        \\\"language\\\": \\\"en\\\" \\n      },\\n      \\\"image_link\\\": \\\"https://scontent.xx.fbcdn.net/v/t15.0-10/s720x720/27599510_1995747294073059_3197960858223247360_n.jpg?_nc_cat=0&oh=ae39d986d63f1cf2dac596d3f93cf53b&oe=5B303B2E\\\",\\n      \\\"has_video\\\": true,\\n      \\\"nw_score\\\": 869.3953298785547,\\n      \\\"max_nw_score\\\": 16524.22956588446,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 285,\\n          \\\"name\\\": \\\"Viral Sites\\\"\\n        }\\n      ],\\n      \\\"authors\\\": null,\\n      \\\"entities\\\": []\\n    },\\n    {\\n      \\\"page_id\\\": \\\"92304305160\\\",\\n      \\\"page_name\\\": \\\"Will Smith\\\",\\n      \\\"post_type\\\": \\\"Native Video\\\",\\n      \\\"is_live_video\\\": false,\\n      \\\"fb_story\\\": \\\"\\\",\\n      \\\"fb_sponsor_tags\\\": [],\\n      \\\"fb_data\\\": {\\n        \\\"total_engagement_count\\\": 2730954,\\n        \\\"total_count_delta\\\": 30339,\\n        \\\"delta_period\\\": 683,\\n        \\\"delta_period_unit\\\": \\\"m\\\",\\n        \\\"fb_overperforming\\\": 8.63659222535034,\\n        \\\"reactions\\\": {\\n          \\\"comments\\\": 74647,\\n          \\\"likes\\\": 1094596,\\n          \\\"shares\\\": 849410,\\n          \\\"loves\\\": 566717,\\n          \\\"wows\\\": 4295,\\n          \\\"hahas\\\": 141110,\\n          \\\"sads\\\": 107,\\n          \\\"angrys\\\": 72\\n        }\\n      },\\n      \\\"uuid\\\": \\\"888447c0-3044-11e8-a52e-a128b18e226e\\\",\\n      \\\"publication_timestamp\\\": 1521993008000,\\n      \\\"link\\\": \\\"https://www.facebook.com/92304305160/posts/10160067736600161\\\",\\n      \\\"headline\\\": \\\"\\\",\\n      \\\"excerpt\\\": \\\"#Bucketlist - Salsa Lessons from @MarcAnthony... ✔️ \\\\n\\\\nI just realized this is my 100th Post - Thank You All! Let’s Go Get the next 💯\\\",\\n      \\\"keywords\\\": \\\"\\\",\\n      \\\"source\\\": {\\n        \\\"publisher\\\": \\\"\\\",\\n        \\\"link\\\": \\\"http://\\\",\\n        \\\"country\\\": \\\"United States\\\",\\n        \\\"country_code\\\": \\\"us\\\"\\n      },\\n      \\\"image_link\\\": \\\"https://scontent.xx.fbcdn.net/v/t15.0-10/s720x720/27603910_10160067743400161_4242397347268526080_n.jpg?_nc_cat=0&oh=54bdf5c764e8fe2bfab3911e2f0474fc&oe=5B2F7118\\\",\\n      \\\"has_video\\\": true,\\n      \\\"nw_score\\\": 227.7659232536071,\\n      \\\"max_nw_score\\\": 89325.11841407913,\\n      \\\"topics\\\": [\\n        {\\n          \\\"id\\\": 3,\\n          \\\"name\\\": \\\"Entertainment\\\"\\n        },\\n        {\\n          \\\"id\\\": 699,\\n          \\\"name\\\": \\\"Celebrity\\\"\\n        }\\n      ],\\n      \\\"authors\\\": null,\\n      \\\"entities\\\": []\\n    }\\n  ]\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54a2180e-4292-4adc-a0fd-6e85720fb289",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fbPosts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"country_code:us\"\n  ],\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"default_fields\": [\n    \"page_name\",\n    \"external_link\"\n  ],\n  \"size\": 5,\n  \"content_type\": \"<string>\",\n  \"sort_by\": \"default\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Fields 'foo_field' is not allowed for filters query!\\\",\\n    \\\"id\\\": \\\"cdf16324-3c65-4330-9137-ea8efcf7e3a0\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9583fb9b-e779-4dcf-84a8-d8ae5a75b635",
+    "name": "quick-start-api-formerly-get-api Articles FbPosts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

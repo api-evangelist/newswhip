@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "quick-start-api-formerly-get-api Articles Local API",
+    "version": "1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Local",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "/local",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.newswhip.com/v1/local/:City/All/:Time_Period",
+            "params": [
+              {
+                "name": "City",
+                "value": "",
+                "type": "path",
+                "description": "Any city or local region. See below for available local regions. i.e. New York, NY, London, Toronto, Hamburg-Schleswig-Holstein."
+              },
+              {
+                "name": "Time_Period",
+                "value": "",
+                "type": "path",
+                "description": "Filters articles published within the last {time_period} hours. Valid time_periods range from 1 up to 168 hours"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query",
+                "description": "Your API key."
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "The number of results you wish to have returned in the request. The default is 150 if this is omitted. The maximum you can specify is 500."
+              }
+            ]
+          },
+          "docs": "/local"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,34 +1,82 @@
-generated: '2026-07-20'
+generated: '2026-08-13'
 method: searched
 source: https://developer.newswhip.com/changelog
+checked: '2026-08-13'
 scheme: semver-ish
 current_version: 1.10.0
+dates_published: false
+dates_note: >-
+  Entries are ordered newest-first on the developer hub but carry no machine-readable
+  publication date in the served markdown, so no `date` is recorded per entry rather than
+  one being inferred from position.
 entries:
 - title: 'Removal Notice: /trendingEntities and /igPosts'
   type: removed
   breaking: true
+  summary: >-
+    Both endpoints retired to streamline the API and improve performance; historical data
+    retrieval now starts from 2018 onward.
   url: https://developer.newswhip.com/changelog/removal-notice
 - title: 'Deprecation Notice: /trendingEntities'
   type: deprecated
   breaking: false
+  effective: '2024-01-31'
+  summary: >-
+    Deprecation period announced for /trendingEntities on both the Quick Start and
+    Historical APIs.
   url: https://developer.newswhip.com/changelog/deprecation-notice-trendingentities
 - title: New 'Fake News' Category
   type: added
   breaking: false
+  summary: >-
+    New Fake News category (ID 868) available in API responses and as a `categories`
+    filter value, sourced from PolitiFact's list of fake-news sources.
   url: https://developer.newswhip.com/changelog/new-fake-news-category
 - title: 'Deprecation notice: ''mayhem'' category'
   type: deprecated
   breaking: false
+  summary: >-
+    The mayhem category (ID 22) is no longer accepted in the `filter` section of any
+    query. Queries using it do not fail but return no results. Affects /region, /articles,
+    /stats, /trendingEntities, /twitterInfluencers, /fbInfluencers and /syndicatedArticles.
   url: https://developer.newswhip.com/changelog/deprecation-notice-mayhem-category
+- title: How we use the API to put together monthly publisher rankings
+  type: note
+  breaking: false
+  url: https://developer.newswhip.com/changelog/how-we-use-the-api-to-put-together-monthly-publisher-rankings
 - title: Version 1.10.0
   type: released
-  breaking: false
+  breaking: true
+  summary: >-
+    Removed Syndication features from v1/articles as previously advised — `matched_rate`
+    and `matched_sourceId` no longer appear in the response. [W-930]
+  url: https://developer.newswhip.com/changelog/version-1100
 - title: Version 1.9.0
   type: released
   breaking: false
+  summary: >-
+    Facebook data enriched across all endpoints returning fb data — `likes`, `comments`
+    and `shares` added to `fb_data`. Fixed low result counts on v1/articles full-text
+    search.
+  url: https://developer.newswhip.com/changelog/version-190
+- title: 'Deprecation notice: NewsWhip Syndication features in the v1/articles API'
+  type: deprecated
+  breaking: false
+  summary: >-
+    Announced removal of `matched_rate` and `matched_sourceId` from the v1/articles
+    response; Syndication customers directed to /syndicatedArticles.
+  url: https://developer.newswhip.com/changelog/deprecation-notice-newswhip-syndication-features-in-the-v1articles-api
 - title: Version 1.8.4
   type: released
   breaking: false
+  summary: >-
+    Fixed Syndication API filtering by `_type` and `_value` in
+    `syndication_query.topics_filter`, which previously returned no results. [W-826]
+  url: https://developer.newswhip.com/changelog/version-184
 - title: Version 1.8.3
   type: released
   breaking: false
+  summary: >-
+    Fixed a 400 bad-query error when filtering for more than one URL in the `filters`
+    parameter of v1/articles. [W-831]
+  url: https://developer.newswhip.com/changelog/version-183

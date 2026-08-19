@@ -1,0 +1,183 @@
+{
+  "item": [
+    {
+      "id": "943f9b44-3544-4660-ad10-e146f05b1bd8",
+      "name": "Statistics",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec8de8b6-de0b-4575-945b-da2150d6a691",
+          "name": "/stats",
+          "request": {
+            "name": "/stats",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "DevHub",
+                  "description": "(Required) Your API key."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sort_by\": \"<string>\",\n  \"aggregate_by\": \"<string>\",\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 200\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "47041c40-c67b-4b3b-82b5-e4ac52e2c4ba",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sort_by\": \"<string>\",\n  \"aggregate_by\": \"<string>\",\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"[\\n  {\\n    \\\"key\\\": \\\"globo.com\\\",\\n    \\\"stats\\\": {\\n      \\\"fb_total\\\": {\\n        \\\"count\\\": 14389,\\n        \\\"min\\\": 0,\\n        \\\"max\\\": 305086,\\n        \\\"avg\\\": 756.6266592535965,\\n        \\\"sum\\\": 10887101,\\n        \\\"sum_of_squares\\\": 359712851941,\\n        \\\"variance\\\": 24426671.838377476,\\n        \\\"std_deviation\\\": 4942.334654632108\\n      },\\n      \\\"twitter\\\": {\\n        \\\"count\\\": 8336,\\n        \\\"min\\\": 1,\\n        \\\"max\\\": 3672,\\n        \\\"avg\\\": 20.574136276391556,\\n        \\\"sum\\\": 171506,\\n        \\\"sum_of_squares\\\": 108514118,\\n        \\\"variance\\\": 12594.233467344193,\\n        \\\"std_deviation\\\": 112.22403248566768\\n      },\\n      \\\"pinterest\\\": {\\n        \\\"count\\\": 268,\\n        \\\"min\\\": 1,\\n        \\\"max\\\": 156,\\n        \\\"avg\\\": 4.742537313432836,\\n        \\\"sum\\\": 1271,\\n        \\\"sum_of_squares\\\": 53221,\\n        \\\"variance\\\": 176.09416072621966,\\n        \\\"std_deviation\\\": 13.270047502786856\\n      },\\n      \\\"linkedin\\\": {\\n        \\\"count\\\": 0,\\n        \\\"min\\\": \\\"Infinity\\\",\\n        \\\"max\\\": \\\"-Infinity\\\",\\n        \\\"avg\\\": \\\"NaN\\\",\\n        \\\"sum\\\": 0,\\n        \\\"sum_of_squares\\\": 0,\\n        \\\"variance\\\": \\\"NaN\\\",\\n        \\\"std_deviation\\\": \\\"NaN\\\"\\n      }\\n    },\\n    \\\"total\\\": 11058607\\n  }\\n]\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4c873f9-5979-49a3-a24a-2fcbc67c1e50",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "DevHub"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filters\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"sort_by\": \"<string>\",\n  \"aggregate_by\": \"<string>\",\n  \"from\": null,\n  \"to\": null,\n  \"language\": \"<string>\",\n  \"default_fields\": [\n    \"headline\",\n    \"summary\",\n    \"authors\"\n  ],\n  \"size\": 200\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"List((/aggregate_by,List(ValidationError(List(error.path.missing),WrappedArray()))), (/sort_by,List(ValidationError(List(error.path.missing),WrappedArray()))))\\\",\\n    \\\"id\\\": \\\"7b5212d7-c1b8-46c0-beba-da916ac58960\\\"\\n  }\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.newswhip.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8095ee2f-6e57-4392-9630-e19ab7a1f51b",
+    "name": "quick-start-api-formerly-get-api Articles Statistics API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

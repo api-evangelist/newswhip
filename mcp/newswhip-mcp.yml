@@ -1,38 +1,108 @@
-generated: '2026-07-20'
-method: derived
-status: candidate
-source: openapi/newswhip-openapi.yml
+generated: '2026-08-13'
+method: probed
+status: published-gated
+source: https://developer.newswhip.com/mcp
+checked: '2026-08-13'
+summary: >-
+  NewsWhip serves a live, reachable MCP endpoint from its own developer host at
+  https://developer.newswhip.com/mcp. A GET returns "This URL can only be accessed with a
+  MCP client" (HTTP 200) and a JSON-RPC POST returns a well-formed JSON-RPC error envelope
+  — both `initialize` and `tools/list` answer
+  {"jsonrpc":"2.0","error":{"code":-32001,"message":"Authorization required"},"id":null}
+  with HTTP 401. The endpoint is therefore real and provider-hosted, but its tool list is
+  auth-gated and could not be enumerated anonymously. No WWW-Authenticate header is
+  returned and no /.well-known/oauth-protected-resource or
+  /.well-known/oauth-authorization-server is served (all 404), so the authorization flow
+  is not discoverable either — a client cannot bootstrap auth from the endpoint alone.
+ownership_note: >-
+  developer.newswhip.com is NewsWhip's own developer hub, hosted on ReadMe (response
+  headers carry readme-subdomain "newswhip-api" and readme-repo
+  "newswhip-api-29dcc4d8f685"). The /mcp surface is the platform-provided MCP server for
+  that hub, served on a host NewsWhip controls and populated with NewsWhip's own
+  documentation and API reference. It is recorded as NewsWhip's agent surface for that
+  reason, with the platform origin stated plainly rather than presented as a bespoke
+  NewsWhip build.
+deployment:
+  mode: remote
+  endpoint: https://developer.newswhip.com/mcp
+  auth: unknown
+  auth_note: >-
+    HTTP 401 with JSON-RPC error -32001 "Authorization required", but no WWW-Authenticate
+    challenge and no OAuth well-known documents, so the scheme (OAuth vs. bearer token vs.
+    hub login session) cannot be established from the outside.
+  verified: probed
+  install: null
+  package: null
 server:
-  name: newswhip
-  transport: http
-tools:
-- name: region
-  description: GET /region/{Region}/{Category}/{Time_Period}
-  source_operation: openapi/newswhip-openapi.yml#region
-- name: publisher
-  description: GET /publisher/{Publisher}/{Time_Period}
-  source_operation: openapi/newswhip-openapi.yml#publisher
-- name: local
-  description: GET /local/{City}/All/{Time_Period}
-  source_operation: openapi/newswhip-openapi.yml#local
-- name: search
-  description: GET /search
-  source_operation: openapi/newswhip-openapi.yml#search
-- name: articles
-  description: POST /articles
-  source_operation: openapi/newswhip-openapi.yml#articles
-- name: fbposts
-  description: POST /fbPosts
-  source_operation: openapi/newswhip-openapi.yml#fbposts
-- name: stats
-  description: POST /stats
-  source_operation: openapi/newswhip-openapi.yml#stats
-- name: twitterinfluencers
-  description: POST /twitterInfluencers
-  source_operation: openapi/newswhip-openapi.yml#twitterinfluencers
-- name: fbinfluencers
-  description: POST /fbInfluencers
-  source_operation: openapi/newswhip-openapi.yml#fbinfluencers
-- name: articlesbyhrefs
-  description: POST /articlesByHrefs
-  source_operation: openapi/newswhip-openapi.yml#articlesbyhrefs
+  name: newswhip-developer-hub
+  transport: streamable-http
+  platform: ReadMe
+  tools_enumerated: false
+  tools_note: >-
+    tools/list is gated. NewsWhip publishes no llms.txt tool list either — its
+    /llms.txt is a documentation index, not a tool manifest — so no real tool names,
+    descriptions or inputSchemas are available without authenticated introspection.
+    Nothing below is presented as this server's actual tool list.
+probes:
+- url: https://developer.newswhip.com/mcp
+  method: GET
+  status: 200
+  body: This URL can only be accessed with a MCP client.
+- url: https://developer.newswhip.com/mcp
+  method: POST
+  rpc: initialize
+  status: 401
+  body: '{"jsonrpc":"2.0","error":{"code":-32001,"message":"Authorization required"},"id":null}'
+- url: https://developer.newswhip.com/mcp
+  method: POST
+  rpc: tools/list
+  status: 401
+  body: '{"jsonrpc":"2.0","error":{"code":-32001,"message":"Authorization required"},"id":null}'
+- url: https://developer.newswhip.com/.well-known/oauth-protected-resource
+  status: 404
+- url: https://developer.newswhip.com/.well-known/oauth-authorization-server
+  status: 404
+- url: https://api.newswhip.com/mcp
+  status: 404
+- url: https://mcp.newswhip.com/mcp
+  status: 0
+  note: host does not resolve to a NewsWhip service
+candidate_tools:
+  method: derived
+  source: openapi/
+  note: >-
+    Candidate tool shapes derived from the captured OpenAPI operations, for agent authors
+    who want to wrap the REST API themselves. These are NOT the tools the hosted MCP
+    server exposes.
+  tools:
+  - name: search
+    description: GET /search — keyword search over the last 24 hours (Quick Start API)
+    source_operation: openapi/newswhip-search-api-openapi.yml#search
+  - name: region
+    description: GET /region/{Region}/{Category}/{Time_Period} — ranked content by region and category
+    source_operation: openapi/newswhip-region-api-openapi.yml#region
+  - name: publisher
+    description: GET /publisher/{Publisher}/{Time_Period} — ranked content for one publisher
+    source_operation: openapi/newswhip-publisher-api-openapi.yml#publisher
+  - name: local
+    description: GET /local/{City}/All/{Time_Period} — hyper-local content for one city
+    source_operation: openapi/newswhip-local-api-openapi.yml#local
+  - name: articles
+    description: POST /articles — filtered historical search for web and YouTube content
+    source_operation: openapi/newswhip-articles-api-openapi.yml#articles
+  - name: articlesbyhrefs
+    description: POST /articlesByHrefs — engagement lookup for a supplied list of URLs
+    source_operation: openapi/newswhip-articlesbyhrefs-api-openapi.yml#articlesbyhrefs
+  - name: fbposts
+    description: POST /fbPosts — filtered historical search for Facebook posts
+    source_operation: openapi/newswhip-fbposts-api-openapi.yml#fbposts
+  - name: fbinfluencers
+    description: POST /fbInfluencers — Facebook pages driving engagement for a query
+    source_operation: openapi/newswhip-fbinfluencers-api-openapi.yml#fbinfluencers
+  - name: twitterinfluencers
+    description: POST /twitterInfluencers — Twitter accounts driving engagement for a query
+    source_operation: openapi/newswhip-twitterinfluencers-api-openapi.yml#twitterinfluencers
+  - name: stats
+    description: POST /stats — aggregated engagement statistics for a query
+    source_operation: openapi/newswhip-stats-api-openapi.yml#stats
+crosswalk_ref: mcp/newswhip-tool-crosswalk.yml

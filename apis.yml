@@ -219,6 +219,8 @@ apis:
   humanURL: https://developer.newswhip.com/
   baseURL: https://api.newswhip.com/v1
   tags:
+  - Publishers
+  tags_raw:
   - Publisher
   properties:
   - type: OpenAPI

@@ -9,6 +9,18 @@ description: >-
   specific URLs, and surface the pages and accounts driving a story via a JSON HTTPS API documented
   on the NewsWhip Developer Hub. Added to the API Evangelist network as a portfolio company of 500
   Global and enriched by the API Evangelist pipeline from NewsWhip's public developer surface.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve

@@ -108,30 +108,6 @@ apis:
     url: conventions/newswhip-conventions.yml
   - type: DataModel
     url: data-model/newswhip-data-model.yml
-- aid: newswhip:newswhip-content-api
-  name: NewsWhip Content API
-  description: The Content API from NewsWhip — 3 operation(s) for content.
-  humanURL: https://developer.newswhip.com/
-  baseURL: https://api.newswhip.com/v1
-  tags:
-  - Content
-  properties:
-  - type: OpenAPI
-    url: openapi/newswhip-content-api-openapi.yml
-  - type: Overlay
-    url: overlays/newswhip-content-api-overlay.yaml
-  - type: Documentation
-    url: https://developer.newswhip.com/docs
-  - type: APIReference
-    url: https://developer.newswhip.com/reference
-  - type: Authentication
-    url: authentication/newswhip-authentication.yml
-  - type: ErrorCatalog
-    url: errors/newswhip-problem-types.yml
-  - type: Conventions
-    url: conventions/newswhip-conventions.yml
-  - type: DataModel
-    url: data-model/newswhip-data-model.yml
 - aid: newswhip:newswhip-fbinfluencers-api
   name: NewsWhip FbInfluencers API
   description: The FbInfluencers API from NewsWhip — 1 operation(s) for fbinfluencers.
@@ -168,30 +144,6 @@ apis:
     url: openapi/newswhip-fbposts-api-openapi.yml
   - type: Overlay
     url: overlays/newswhip-fbposts-api-overlay.yaml
-  - type: Documentation
-    url: https://developer.newswhip.com/docs
-  - type: APIReference
-    url: https://developer.newswhip.com/reference
-  - type: Authentication
-    url: authentication/newswhip-authentication.yml
-  - type: ErrorCatalog
-    url: errors/newswhip-problem-types.yml
-  - type: Conventions
-    url: conventions/newswhip-conventions.yml
-  - type: DataModel
-    url: data-model/newswhip-data-model.yml
-- aid: newswhip:newswhip-influencers-api
-  name: NewsWhip Influencers API
-  description: The Influencers API from NewsWhip — 2 operation(s) for influencers.
-  humanURL: https://developer.newswhip.com/
-  baseURL: https://api.newswhip.com/v1
-  tags:
-  - Influencers
-  properties:
-  - type: OpenAPI
-    url: openapi/newswhip-influencers-api-openapi.yml
-  - type: Overlay
-    url: overlays/newswhip-influencers-api-overlay.yaml
   - type: Documentation
     url: https://developer.newswhip.com/docs
   - type: APIReference
@@ -254,30 +206,6 @@ apis:
     url: conventions/newswhip-conventions.yml
   - type: DataModel
     url: data-model/newswhip-data-model.yml
-- aid: newswhip:newswhip-rankings-api
-  name: NewsWhip Rankings API
-  description: The Rankings API from NewsWhip — 3 operation(s) for rankings.
-  humanURL: https://developer.newswhip.com/
-  baseURL: https://api.newswhip.com/v1
-  tags:
-  - Rankings
-  properties:
-  - type: OpenAPI
-    url: openapi/newswhip-rankings-api-openapi.yml
-  - type: Overlay
-    url: overlays/newswhip-rankings-api-overlay.yaml
-  - type: Documentation
-    url: https://developer.newswhip.com/docs
-  - type: APIReference
-    url: https://developer.newswhip.com/reference
-  - type: Authentication
-    url: authentication/newswhip-authentication.yml
-  - type: ErrorCatalog
-    url: errors/newswhip-problem-types.yml
-  - type: Conventions
-    url: conventions/newswhip-conventions.yml
-  - type: DataModel
-    url: data-model/newswhip-data-model.yml
 - aid: newswhip:newswhip-region-api
   name: NewsWhip Region API
   description: The Region API from NewsWhip — 1 operation(s) for region.
@@ -314,54 +242,6 @@ apis:
     url: openapi/newswhip-search-api-openapi.yml
   - type: Overlay
     url: overlays/newswhip-search-api-overlay.yaml
-  - type: Documentation
-    url: https://developer.newswhip.com/docs
-  - type: APIReference
-    url: https://developer.newswhip.com/reference
-  - type: Authentication
-    url: authentication/newswhip-authentication.yml
-  - type: ErrorCatalog
-    url: errors/newswhip-problem-types.yml
-  - type: Conventions
-    url: conventions/newswhip-conventions.yml
-  - type: DataModel
-    url: data-model/newswhip-data-model.yml
-- aid: newswhip:newswhip-social-api
-  name: NewsWhip Social API
-  description: The Social API from NewsWhip — 1 operation(s) for social.
-  humanURL: https://developer.newswhip.com/
-  baseURL: https://api.newswhip.com/v1
-  tags:
-  - Social
-  properties:
-  - type: OpenAPI
-    url: openapi/newswhip-social-api-openapi.yml
-  - type: Overlay
-    url: overlays/newswhip-social-api-overlay.yaml
-  - type: Documentation
-    url: https://developer.newswhip.com/docs
-  - type: APIReference
-    url: https://developer.newswhip.com/reference
-  - type: Authentication
-    url: authentication/newswhip-authentication.yml
-  - type: ErrorCatalog
-    url: errors/newswhip-problem-types.yml
-  - type: Conventions
-    url: conventions/newswhip-conventions.yml
-  - type: DataModel
-    url: data-model/newswhip-data-model.yml
-- aid: newswhip:newswhip-statistics-api
-  name: NewsWhip Statistics API
-  description: The Statistics API from NewsWhip — 1 operation(s) for statistics.
-  humanURL: https://developer.newswhip.com/
-  baseURL: https://api.newswhip.com/v1
-  tags:
-  - Statistics
-  properties:
-  - type: OpenAPI
-    url: openapi/newswhip-statistics-api-openapi.yml
-  - type: Overlay
-    url: overlays/newswhip-statistics-api-overlay.yaml
   - type: Documentation
     url: https://developer.newswhip.com/docs
   - type: APIReference
@@ -423,6 +303,16 @@ apis:
   - type: DataModel
     url: data-model/newswhip-data-model.yml
 common:
+- type: Overlay
+  url: overlays/newswhip-content-api-overlay.yaml
+- type: Overlay
+  url: overlays/newswhip-influencers-api-overlay.yaml
+- type: Overlay
+  url: overlays/newswhip-rankings-api-overlay.yaml
+- type: Overlay
+  url: overlays/newswhip-social-api-overlay.yaml
+- type: Overlay
+  url: overlays/newswhip-statistics-api-overlay.yaml
 - type: Overlay
   url: overlays/newswhip-openapi-overlay.yaml
 - type: Website

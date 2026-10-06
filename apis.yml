@@ -44,7 +44,7 @@ x-backed-by:
 - 500-global
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-08-13'
+modified: '2026-10-06'
 tags:
 - Company
 - Media Intelligence
@@ -303,6 +303,8 @@ apis:
   - type: DataModel
     url: data-model/newswhip-data-model.yml
 common:
+- url: https://www.newswhip.com/feed/
+  type: BlogRSS
 - type: Overlay
   url: overlays/newswhip-content-api-overlay.yaml
 - type: Overlay

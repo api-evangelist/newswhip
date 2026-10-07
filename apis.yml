@@ -303,6 +303,8 @@ apis:
   - type: DataModel
     url: data-model/newswhip-data-model.yml
 common:
+- type: Pricing
+  url: https://developer.newswhip.com/docs/api-features
 - url: https://www.newswhip.com/feed/
   type: BlogRSS
 - type: Overlay
